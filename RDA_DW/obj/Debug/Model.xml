@@ -1,0 +1,6047 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DataSchemaModel FileFormatVersion="1.2" SchemaVersion="2.9" DspName="Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider" CollationLcid="1033" CollationCaseSensitive="False" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+	<Header>
+		<CustomData Category="AnsiNulls">
+			<Metadata Name="AnsiNulls" Value="True" />
+		</CustomData>
+		<CustomData Category="QuotedIdentifier">
+			<Metadata Name="QuotedIdentifier" Value="True" />
+		</CustomData>
+		<CustomData Category="CompatibilityMode">
+			<Metadata Name="CompatibilityMode" Value="130" />
+		</CustomData>
+		<CustomData Category="Reference" Type="SqlSchema">
+			<Metadata Name="FileName" Value="C:\USERS\TOKIO\SOURCE\REPOS\RDA\RDA\BIN\DEBUG\RDA.DACPAC" />
+			<Metadata Name="LogicalName" Value="RDA.dacpac" />
+			<Metadata Name="ExternalParts" Value="[$(RDA)]" />
+			<Metadata Name="SuppressMissingDependenciesErrors" Value="False" />
+		</CustomData>
+		<CustomData Category="Reference" Type="Assembly">
+			<Metadata Name="LogicalName" Value="RDA_DW.dll" />
+			<Metadata Name="FileName" Value="C:\USERS\TOKIO\SOURCE\REPOS\RDA\RDA_DW\OBJ\DEBUG\RDA_DW.DLL" />
+			<Metadata Name="AssemblyName" Value="RDA_DW" />
+			<Metadata Name="PermissionSet" Value="SAFE" />
+			<Metadata Name="Owner" Value="" />
+			<Metadata Name="GenerateSqlClrDdl" Value="True" />
+			<Metadata Name="IsVisible" Value="True" />
+			<Metadata Name="IsModelAware" Value="True" />
+			<Metadata Name="SkipCreationIfEmpty" Value="True" />
+			<Metadata Name="AssemblySymbolsName" Value="C:\Users\tokio\source\repos\RDA\RDA_DW\obj\Debug\RDA_DW.pdb" />
+		</CustomData>
+		<CustomData Category="SqlCmdVariables" Type="SqlCmdVariable">
+			<Metadata Name="RDA" Value="" />
+		</CustomData>
+	</Header>
+	<Model>
+		<Element Type="SqlDatabaseOptions">
+			<Property Name="Collation" Value="SQL_Latin1_General_CP1_CI_AS" />
+			<Property Name="IsAnsiNullDefaultOn" Value="True" />
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Property Name="IsAnsiWarningsOn" Value="True" />
+			<Property Name="IsArithAbortOn" Value="True" />
+			<Property Name="IsConcatNullYieldsNullOn" Value="True" />
+			<Property Name="IsTornPageProtectionOn" Value="False" />
+			<Property Name="IsFullTextEnabled" Value="True" />
+			<Property Name="PageVerifyMode" Value="3" />
+			<Property Name="DefaultLanguage" Value="" />
+			<Property Name="DefaultFullTextLanguage" Value="" />
+			<Property Name="QueryStoreStaleQueryThreshold" Value="367" />
+			<Relationship Name="DefaultFilegroup">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[PRIMARY]" />
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[((1))]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[FactReklama]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[dbo].[FactReklama].[BrojPrikaza]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
+		</Element>
+		<Element Type="SqlDefaultConstraint">
+			<Property Name="DefaultExpressionScript">
+				<Value><![CDATA[((1))]]></Value>
+			</Property>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForColumn">
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[BrojNarudzbenica]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Property Name="IsClustered" Value="False" />
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[FactReklama].[ReklamaKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[FactReklama]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="5" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Property Name="IsClustered" Value="False" />
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[FactNarudzbenice].[NarudzbeniceKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Property Name="IsClustered" Value="False" />
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[DimZaposleni].[ZaposleniKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[DimZaposleni]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="7" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Property Name="IsClustered" Value="False" />
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[DimTVkanali].[TVkanaliKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[DimTVkanali]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="8" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Property Name="IsClustered" Value="False" />
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[DimPrivrednaGrana].[PrivrednaGranaKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[DimPrivrednaGrana]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="9" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Property Name="IsClustered" Value="False" />
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[DimOdbor].[OdborKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[DimOdbor]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="10" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Property Name="IsClustered" Value="False" />
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[DimKompanija].[KompanijaKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[DimKompanija]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="11" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Property Name="IsClustered" Value="False" />
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[DimGrad].[GradKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[DimGrad]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="12" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Property Name="IsClustered" Value="False" />
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[DimAgencija].[AgencijaKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[DimAgencija]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="13" />
+		</Element>
+		<Element Type="SqlScalarFunction" Name="[dbo].[CreateKeyFromDate]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromDate].[@Date]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="FunctionBody">
+				<Entry>
+					<Element Type="SqlScriptFunctionImplementation">
+						<Property Name="BodyScript">
+							<Value><![CDATA[
+BEGIN
+	RETURN CAST( REPLACE( CAST( @Date AS VARCHAR(10) ), '-', '' ) AS INT );
+END]]></Value>
+						</Property>
+						<Annotation Type="SysCommentsObjectAnnotation">
+							<Property Name="Length" Value="159" />
+							<Property Name="StartLine" Value="1" />
+							<Property Name="StartColumn" Value="1" />
+							<Property Name="HeaderContents" Value="CREATE FUNCTION dbo.CreateKeyFromDate&#xD;&#xA;(&#xD;&#xA;&#x9;@Date DATE&#xD;&#xA;)&#xD;&#xA;RETURNS INT&#xD;&#xA;AS" />
+						</Annotation>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[CreateKeyFromDate].[@Date]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[date]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Type">
+				<Entry>
+					<Element Type="SqlTypeSpecifier">
+						<Relationship Name="Type">
+							<Entry>
+								<References ExternalSource="BuiltIns" Name="[int]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlScalarFunction" Name="[dbo].[CreateKeyFromSourceID]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID].[@SourceID]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="FunctionBody">
+				<Entry>
+					<Element Type="SqlScriptFunctionImplementation">
+						<Property Name="BodyScript">
+							<Value><![CDATA[
+BEGIN
+	RETURN CAST( HASHBYTES( 'SHA2_512', @SourceID ) AS INT );
+END]]></Value>
+						</Property>
+						<Annotation Type="SysCommentsObjectAnnotation">
+							<Property Name="Length" Value="161" />
+							<Property Name="StartLine" Value="1" />
+							<Property Name="StartColumn" Value="1" />
+							<Property Name="HeaderContents" Value="CREATE FUNCTION dbo.CreateKeyFromSourceID&#xD;&#xA;(&#xD;&#xA;&#x9;@SourceID VARCHAR(MAX)&#xD;&#xA;)&#xD;&#xA;RETURNS INT&#xD;&#xA;AS" />
+						</Annotation>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[CreateKeyFromSourceID].[@SourceID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Type">
+				<Entry>
+					<Element Type="SqlTypeSpecifier">
+						<Relationship Name="Type">
+							<Entry>
+								<References ExternalSource="BuiltIns" Name="[int]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[DimAgencija]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimAgencija].[AgencijaKey]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimAgencija].[IzvorniAgencija_ID]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimAgencija].[NazivAgencije]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimAgencija].[SredisteAgencije]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimAgencija].[AdresaAgencije]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="30" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimAgencija].[TelefonAgencije]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="18" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimAgencija].[EmailAgencije]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="20" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimAgencija].[HashKey]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimAgencija].[Obrisan]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smalldatetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="13" />
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[DimDatum]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimDatum].[DateKey]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimDatum].[Datum]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimDatum].[DatumRS]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimDatum].[DatumRS2]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimDatum].[DanUMesecu]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="2" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimDatum].[ImeDana_C]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimDatum].[ImeDana_L]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimDatum].[DanUSedmici]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="1" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimDatum].[NedeljaUGodini]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="2" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimDatum].[Mesec]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="2" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[varchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimDatum].[ImeMeseca_C]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="9" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimDatum].[ImeMeseca_L]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="9" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimDatum].[Kvartal]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="1" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimDatum].[ImeKvartala_C]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="9" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimDatum].[ImeKvartala_L]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="9" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimDatum].[Godina]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="4" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimDatum].[MesecGodina]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimDatum].[MMYYYY]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="6" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="14" />
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[DimGrad]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimGrad].[GradKey]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimGrad].[IzvorniGrad_ID]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimGrad].[NazivGrada]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="30" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimGrad].[NazivRegiona]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimGrad].[HashKey]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimGrad].[Obrisan]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smalldatetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="12" />
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[DimKompanija]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimKompanija].[KompanijaKey]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimKompanija].[IzvorniKompanija_ID]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimKompanija].[NazivKompanije]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimKompanija].[SedisteKompanije]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="30" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimKompanija].[SifraKompanije]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="6" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimKompanija].[HashKey]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimKompanija].[Obrisan]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smalldatetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="11" />
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[DimOdbor]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimOdbor].[OdborKey]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimOdbor].[IzvorniOdbor_ID]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimOdbor].[NazivOdbora]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimOdbor].[NazivPolitickeStranke]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimOdbor].[NazivOpstine]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimOdbor].[HashKey]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimOdbor].[Obrisan]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smalldatetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="10" />
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[DimPrivrednaGrana]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimPrivrednaGrana].[PrivrednaGranaKey]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimPrivrednaGrana].[IzvorniPrivrednaGrana_ID]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimPrivrednaGrana].[NazivPrivredneGrane]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimPrivrednaGrana].[HashKey]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimPrivrednaGrana].[Obrisan]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smalldatetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="9" />
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[DimTVkanali]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimTVkanali].[TVkanaliKey]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimTVkanali].[IzvorniKanali_ID]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimTVkanali].[NazivKanala]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="30" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimTVkanali].[TVkuca]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="20" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimTVkanali].[SedisteTVkuca]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="30" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimTVkanali].[AdresaTVkuca]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimTVkanali].[EmailTVkuca]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="25" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimTVkanali].[TelefonTVkuca]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="18" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimTVkanali].[VrstaVlasnistva]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimTVkanali].[HashKey]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimTVkanali].[Obrisan]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smalldatetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="8" />
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[DimZaposleni]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimZaposleni].[ZaposleniKey]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimZaposleni].[IzvorniZaposleni_ID]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimZaposleni].[ImeZaposlenog]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="20" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimZaposleni].[PrezimeZaposlenog]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="20" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimZaposleni].[JmbgZaposlenog]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="13" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimZaposleni].[EmailZaposlenog]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="20" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimZaposleni].[PozicijaZaposlenog]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="30" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimZaposleni].[HashKey]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[DimZaposleni].[Obrisan]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smalldatetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="7" />
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[FactNarudzbenice]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[FactNarudzbenice].[NarudzbeniceKey]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[FactNarudzbenice].[IzvorniStavkaNarudzbenice_ID]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[FactNarudzbenice].[ZaposleniKey]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[FactNarudzbenice].[OdborKey]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[FactNarudzbenice].[GradKey]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[FactNarudzbenice].[VremePrikazivanjaKey]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[FactNarudzbenice].[KompanijaKey]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[FactNarudzbenice].[BrojNarudzbenica]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="4" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[FactNarudzbenice].[PocetakTermina]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[FactNarudzbenice].[ZavrsetakTermina]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[FactNarudzbenice].[HashKey]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[FactNarudzbenice].[Obrisan]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smalldatetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="6" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="15" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="16" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="17" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="18" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="19" />
+		</Element>
+		<Element Type="SqlTable" Name="[dbo].[FactReklama]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[FactReklama].[ReklamaKey]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[FactReklama].[IzvorniReklama_ID]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[FactReklama].[TVkanaliKey]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[FactReklama].[PrivrednaGranaKey]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[FactReklama].[AgencijaKey]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[FactReklama].[OdborKey]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[FactReklama].[GradKey]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[FactReklama].[VremePrikazivanjaKey]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[FactReklama].[KompanijaKey]">
+						<Property Name="IsNullable" Value="False" />
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[FactReklama].[BrojPrikaza]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+						<AttachedAnnotation Disambiguator="3" />
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[FactReklama].[TrajanjeReklame]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[FactReklama].[CenaReklame]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[FactReklama].[HashKey]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSimpleColumn" Name="[dbo].[FactReklama].[Obrisan]">
+						<Relationship Name="TypeSpecifier">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[smalldatetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="5" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="20" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="21" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="22" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="23" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="24" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="25" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="26" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_Agencija_Reklama]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[dbo].[FactReklama].[AgencijaKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[FactReklama]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[dbo].[DimAgencija].[AgencijaKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[DimAgencija]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="20" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_Datum_Narudzbine]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[VremePrikazivanjaKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[dbo].[DimDatum].[DateKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[DimDatum]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="15" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_Datum_Reklama]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[dbo].[FactReklama].[VremePrikazivanjaKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[FactReklama]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[dbo].[DimDatum].[DateKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[DimDatum]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="21" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_Kompanije_Narudzbine]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[KompanijaKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[dbo].[DimKompanija].[KompanijaKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[DimKompanija]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="16" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_Kompanije_Reklama]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[dbo].[FactReklama].[KompanijaKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[FactReklama]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[dbo].[DimKompanija].[KompanijaKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[DimKompanija]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="22" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_Odbor_Narudzbine]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[OdborKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[dbo].[DimOdbor].[OdborKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[DimOdbor]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="17" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_Odbor_Reklama]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[dbo].[FactReklama].[OdborKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[FactReklama]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[dbo].[DimOdbor].[OdborKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[DimOdbor]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="23" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_PrivrednaGrana_Reklama]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[dbo].[FactReklama].[PrivrednaGranaKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[FactReklama]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[dbo].[DimPrivrednaGrana].[PrivrednaGranaKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[DimPrivrednaGrana]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="24" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_Region_Narudzbine]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[GradKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[dbo].[DimGrad].[GradKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[DimGrad]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="18" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_Region_Reklama]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[dbo].[FactReklama].[GradKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[FactReklama]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[dbo].[DimGrad].[GradKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[DimGrad]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="25" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_TVkanali_Reklama]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[dbo].[FactReklama].[TVkanaliKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[FactReklama]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[dbo].[DimTVkanali].[TVkanaliKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[DimTVkanali]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="26" />
+		</Element>
+		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_Zaposleni_Narudzbine]">
+			<Relationship Name="Columns">
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[ZaposleniKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignColumns">
+				<Entry>
+					<References Name="[dbo].[DimZaposleni].[ZaposleniKey]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="ForeignTable">
+				<Entry>
+					<References Name="[dbo].[DimZaposleni]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="19" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_DateKey]">
+			<Property Name="IsClustered" Value="False" />
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[DimDatum].[DateKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[DimDatum]" />
+				</Entry>
+			</Relationship>
+			<AttachedAnnotation Disambiguator="14" />
+		</Element>
+		<Element Type="SqlScalarFunction" Name="[dbo].[ufn_GetHashDimAgencija]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimAgencija].[@IzvorniAgencija_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimAgencija].[@NazivAgencije]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimAgencija].[@SredisteAgencije]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimAgencija].[@AdresaAgencije]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimAgencija].[@TelefonAgencije]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimAgencija].[@EmailAgencije]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="FunctionBody">
+				<Entry>
+					<Element Type="SqlScriptFunctionImplementation">
+						<Property Name="BodyScript">
+							<Value><![CDATA[
+BEGIN
+	RETURN CAST( HASHBYTES( 'SHA2_512', (
+	SELECT 
+		@IzvorniAgencija_ID AS IzvorniAgencija_ID,
+		@NazivAgencije AS NazivAgencije,
+		@SredisteAgencije AS SredisteAgencije,
+		@AdresaAgencije AS AdresaAgencije,
+		@TelefonAgencije AS TelefonAgencije,
+		@EmailAgencije AS EmailAgencije
+	FOR XML RAW('R'))) AS INT )
+END]]></Value>
+						</Property>
+						<Annotation Type="SysCommentsObjectAnnotation">
+							<Property Name="Length" Value="583" />
+							<Property Name="StartLine" Value="1" />
+							<Property Name="StartColumn" Value="1" />
+							<Property Name="HeaderContents" Value="CREATE FUNCTION dbo.ufn_GetHashDimAgencija&#xD;&#xA;(&#xD;&#xA;&#x9;@IzvorniAgencija_ID INT,&#xD;&#xA;&#x9;@NazivAgencije NVARCHAR (50),&#xD;&#xA;&#x9;@SredisteAgencije NVARCHAR(50),&#xD;&#xA;&#x9;@AdresaAgencije NVARCHAR(30),&#xD;&#xA;&#x9;@TelefonAgencije CHAR(18),&#xD;&#xA;&#x9;@EmailAgencije CHAR(20)&#xD;&#xA;)&#xD;&#xA;RETURNS VARCHAR(MAX)&#xD;&#xA;AS" />
+						</Annotation>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimAgencija].[@IzvorniAgencija_ID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimAgencija].[@NazivAgencije]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimAgencija].[@SredisteAgencije]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimAgencija].[@AdresaAgencije]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="30" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimAgencija].[@TelefonAgencije]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="18" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimAgencija].[@EmailAgencije]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="20" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Type">
+				<Entry>
+					<Element Type="SqlTypeSpecifier">
+						<Property Name="IsMax" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<References ExternalSource="BuiltIns" Name="[varchar]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlScalarFunction" Name="[dbo].[ufn_GetHashDimGrad]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimGrad].[@IzvorniGrad_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimGrad].[@NazivGrada]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimGrad].[@NazivRegiona]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="FunctionBody">
+				<Entry>
+					<Element Type="SqlScriptFunctionImplementation">
+						<Property Name="BodyScript">
+							<Value><![CDATA[
+BEGIN
+	RETURN CAST( HASHBYTES( 'SHA2_512', (
+	SELECT 
+		@IzvorniGrad_ID AS IzvorniGrad_ID,
+		@NazivGrada AS NazivGrada,
+		@NazivRegiona AS NazivRegiona
+	FOR XML RAW('R'))) AS INT )
+END]]></Value>
+						</Property>
+						<Annotation Type="SysCommentsObjectAnnotation">
+							<Property Name="Length" Value="345" />
+							<Property Name="StartLine" Value="1" />
+							<Property Name="StartColumn" Value="1" />
+							<Property Name="HeaderContents" Value="CREATE FUNCTION dbo.ufn_GetHashDimGrad&#xD;&#xA;(&#xD;&#xA;&#x9;@IzvorniGrad_ID INT,&#xD;&#xA;&#x9;@NazivGrada NVARCHAR (50),&#xD;&#xA;&#x9;@NazivRegiona NVARCHAR (30)&#xD;&#xA;)&#xD;&#xA;RETURNS VARCHAR(MAX)&#xD;&#xA;AS" />
+						</Annotation>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimGrad].[@IzvorniGrad_ID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimGrad].[@NazivGrada]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimGrad].[@NazivRegiona]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="30" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Type">
+				<Entry>
+					<Element Type="SqlTypeSpecifier">
+						<Property Name="IsMax" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<References ExternalSource="BuiltIns" Name="[varchar]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlScalarFunction" Name="[dbo].[ufn_GetHashDimKompanija]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimKompanija].[@IzvorniKompanija_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimKompanija].[@NazivKompanije]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimKompanija].[@SedisteKompanije]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimKompanija].[@SifraKompanije]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="FunctionBody">
+				<Entry>
+					<Element Type="SqlScriptFunctionImplementation">
+						<Property Name="BodyScript">
+							<Value><![CDATA[
+BEGIN
+	RETURN CAST( HASHBYTES( 'SHA2_512', (
+	SELECT 
+		@IzvorniKompanija_ID AS IzvorniKompanija_ID
+		,@NazivKompanije AS NazivKompanije
+		,@SedisteKompanije AS SedisteKompanije
+		,@SifraKompanije AS SifraKompanije
+	FOR XML RAW('R'))) AS INT)
+END]]></Value>
+						</Property>
+						<Annotation Type="SysCommentsObjectAnnotation">
+							<Property Name="Length" Value="453" />
+							<Property Name="StartLine" Value="1" />
+							<Property Name="StartColumn" Value="1" />
+							<Property Name="HeaderContents" Value="CREATE FUNCTION dbo.ufn_GetHashDimKompanija&#xD;&#xA;(&#xD;&#xA;&#x9;@IzvorniKompanija_ID INT&#xD;&#xA;&#x9;,@NazivKompanije NVARCHAR (50)&#xD;&#xA;&#x9;,@SedisteKompanije NVARCHAR (30)&#xD;&#xA;&#x9;,@SifraKompanije CHAR(6)&#xD;&#xA;)&#xD;&#xA;RETURNS VARCHAR(MAX)&#xD;&#xA;AS" />
+						</Annotation>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimKompanija].[@IzvorniKompanija_ID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimKompanija].[@NazivKompanije]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimKompanija].[@SedisteKompanije]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="30" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimKompanija].[@SifraKompanije]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="6" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Type">
+				<Entry>
+					<Element Type="SqlTypeSpecifier">
+						<Property Name="IsMax" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<References ExternalSource="BuiltIns" Name="[varchar]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlScalarFunction" Name="[dbo].[ufn_GetHashDimOdbor]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimOdbor].[@IzvorniOdbor_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimOdbor].[@Odbor]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimOdbor].[@Politicka_stranka]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimOdbor].[@Opstina]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="FunctionBody">
+				<Entry>
+					<Element Type="SqlScriptFunctionImplementation">
+						<Property Name="BodyScript">
+							<Value><![CDATA[
+BEGIN
+	RETURN CAST( HASHBYTES( 'SHA2_512', (
+	SELECT 
+		@IzvorniOdbor_ID AS IzvorniOdbor_ID,
+		@Odbor AS Odbor,
+		@Politicka_stranka AS Politicka_stranka,
+		@Opstina AS Opstina
+	FOR XML RAW('R'))) AS INT )
+END]]></Value>
+						</Property>
+						<Annotation Type="SysCommentsObjectAnnotation">
+							<Property Name="Length" Value="399" />
+							<Property Name="StartLine" Value="1" />
+							<Property Name="StartColumn" Value="1" />
+							<Property Name="HeaderContents" Value="CREATE FUNCTION dbo.ufn_GetHashDimOdbor&#xD;&#xA;(&#xD;&#xA;&#x9;@IzvorniOdbor_ID INT,&#xD;&#xA;&#x9;@Odbor NVARCHAR (50),&#xD;&#xA;&#x9;@Politicka_stranka NVARCHAR (50),&#xD;&#xA;&#x9;@Opstina NVARCHAR (50)&#xD;&#xA;)&#xD;&#xA;RETURNS VARCHAR(MAX)&#xD;&#xA;AS" />
+						</Annotation>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimOdbor].[@IzvorniOdbor_ID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimOdbor].[@Odbor]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimOdbor].[@Politicka_stranka]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimOdbor].[@Opstina]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Type">
+				<Entry>
+					<Element Type="SqlTypeSpecifier">
+						<Property Name="IsMax" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<References ExternalSource="BuiltIns" Name="[varchar]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlScalarFunction" Name="[dbo].[ufn_GetHashDimPrivrednaGrana]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimPrivrednaGrana].[@IzvorniPrivrednaGrana_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimPrivrednaGrana].[@Privredna_grana]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="FunctionBody">
+				<Entry>
+					<Element Type="SqlScriptFunctionImplementation">
+						<Property Name="BodyScript">
+							<Value><![CDATA[
+BEGIN
+	RETURN CAST( HASHBYTES( 'SHA2_512', (
+	SELECT 
+		@IzvorniPrivrednaGrana_ID AS IzvorniPrivrednaGrana_ID,
+		@Privredna_grana AS Privredna_grana
+	FOR XML RAW('R'))) AS INT )
+END]]></Value>
+						</Property>
+						<Annotation Type="SysCommentsObjectAnnotation">
+							<Property Name="Length" Value="335" />
+							<Property Name="StartLine" Value="1" />
+							<Property Name="StartColumn" Value="1" />
+							<Property Name="HeaderContents" Value="CREATE FUNCTION dbo.ufn_GetHashDimPrivrednaGrana&#xD;&#xA;(&#xD;&#xA;&#x9;@IzvorniPrivrednaGrana_ID INT,&#xD;&#xA;&#x9;@Privredna_grana NVARCHAR (50)&#xD;&#xA;)&#xD;&#xA;RETURNS VARCHAR(MAX)&#xD;&#xA;AS" />
+						</Annotation>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimPrivrednaGrana].[@IzvorniPrivrednaGrana_ID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimPrivrednaGrana].[@Privredna_grana]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Type">
+				<Entry>
+					<Element Type="SqlTypeSpecifier">
+						<Property Name="IsMax" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<References ExternalSource="BuiltIns" Name="[varchar]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlScalarFunction" Name="[dbo].[ufn_GetHashDimTVkanali]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimTVkanali].[@IzvorniKanali_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimTVkanali].[@NazivKanala]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimTVkanali].[@TVkuca]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimTVkanali].[@SedisteTVkuca]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimTVkanali].[@AdresaTVkuca]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimTVkanali].[@EmailTVkuca]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimTVkanali].[@TelefonTVkuca]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimTVkanali].[@VrstaVlasnistva]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="FunctionBody">
+				<Entry>
+					<Element Type="SqlScriptFunctionImplementation">
+						<Property Name="BodyScript">
+							<Value><![CDATA[
+BEGIN
+	RETURN CAST( HASHBYTES( 'SHA2_512', (
+	SELECT 
+		@IzvorniKanali_ID AS IzvorniKanali_ID
+		,@NazivKanala AS NazivKanala
+		,@TVkuca AS TVkuca
+		,@SedisteTVkuca AS SedisteTVkuca
+		,@AdresaTVkuca AS AdresaTVkuca
+		,@EmailTVkuca AS EmailTVkuca
+		,@TelefonTVkuca AS TelefonTVkuca
+		,@VrstaVlasnistva AS VrstaVlasnistva
+	FOR XML RAW('R'))) AS INT )
+END]]></Value>
+						</Property>
+						<Annotation Type="SysCommentsObjectAnnotation">
+							<Property Name="Length" Value="663" />
+							<Property Name="StartLine" Value="1" />
+							<Property Name="StartColumn" Value="1" />
+							<Property Name="HeaderContents" Value="CREATE FUNCTION dbo.ufn_GetHashDimTVkanali&#xD;&#xA;(&#xD;&#xA;&#x9;@IzvorniKanali_ID INT&#xD;&#xA;&#x9;,@NazivKanala NVARCHAR(30)&#xD;&#xA;&#x9;,@TVkuca NVARCHAR(20)&#xD;&#xA;&#x9;,@SedisteTVkuca NVARCHAR(30)&#xD;&#xA;&#x9;,@AdresaTVkuca NVARCHAR(50)&#xD;&#xA;&#x9;,@EmailTVkuca CHAR(25)&#xD;&#xA;&#x9;,@TelefonTVkuca CHAR(18)&#xD;&#xA;&#x9;,@VrstaVlasnistva NVARCHAR (50)&#xD;&#xA;)&#xD;&#xA;RETURNS VARCHAR(MAX)&#xD;&#xA;AS" />
+						</Annotation>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimTVkanali].[@IzvorniKanali_ID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimTVkanali].[@NazivKanala]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="30" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimTVkanali].[@TVkuca]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="20" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimTVkanali].[@SedisteTVkuca]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="30" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimTVkanali].[@AdresaTVkuca]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimTVkanali].[@EmailTVkuca]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="25" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimTVkanali].[@TelefonTVkuca]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="18" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimTVkanali].[@VrstaVlasnistva]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="50" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Type">
+				<Entry>
+					<Element Type="SqlTypeSpecifier">
+						<Property Name="IsMax" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<References ExternalSource="BuiltIns" Name="[varchar]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlScalarFunction" Name="[dbo].[ufn_GetHashDimZaposleni]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimZaposleni].[@IzvorniZaposleni_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimZaposleni].[@ImeZaposlenog]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimZaposleni].[@PrezimeZaposlenog]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimZaposleni].[@JmbgZaposlenog]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimZaposleni].[@EmailZaposlenog]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimZaposleni].[@PozicijaZaposlenog]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="FunctionBody">
+				<Entry>
+					<Element Type="SqlScriptFunctionImplementation">
+						<Property Name="BodyScript">
+							<Value><![CDATA[
+BEGIN
+	RETURN CAST( HASHBYTES( 'SHA2_512', (
+	SELECT 
+		@IzvorniZaposleni_ID AS IzvorniZaposleni_ID
+		,@ImeZaposlenog AS ImeZaposlenog
+		,@PrezimeZaposlenog AS PrezimeZaposlenog
+		,@JmbgZaposlenog AS JmbgZaposlenog
+		,@EmailZaposlenog AS EmailZaposlenog
+		,@PozicijaZaposlenog AS PozicijaZaposlenog
+	FOR XML RAW('R'))) AS INT)
+END]]></Value>
+						</Property>
+						<Annotation Type="SysCommentsObjectAnnotation">
+							<Property Name="Length" Value="607" />
+							<Property Name="StartLine" Value="1" />
+							<Property Name="StartColumn" Value="1" />
+							<Property Name="HeaderContents" Value="CREATE FUNCTION dbo.ufn_GetHashDimZaposleni&#xD;&#xA;(&#xD;&#xA;&#x9;@IzvorniZaposleni_ID INT&#xD;&#xA;&#x9;,@ImeZaposlenog NVARCHAR (20)&#xD;&#xA;&#x9;,@PrezimeZaposlenog NVARCHAR (20)&#xD;&#xA;&#x9;,@JmbgZaposlenog CHAR (13)&#xD;&#xA;&#x9;,@EmailZaposlenog CHAR(20)&#xD;&#xA;&#x9;,@PozicijaZaposlenog NVARCHAR (30)&#xD;&#xA;)&#xD;&#xA;RETURNS VARCHAR(MAX)&#xD;&#xA;AS" />
+						</Annotation>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimZaposleni].[@IzvorniZaposleni_ID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimZaposleni].[@ImeZaposlenog]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="20" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimZaposleni].[@PrezimeZaposlenog]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="20" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimZaposleni].[@JmbgZaposlenog]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="13" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimZaposleni].[@EmailZaposlenog]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="20" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[char]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashDimZaposleni].[@PozicijaZaposlenog]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="30" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Type">
+				<Entry>
+					<Element Type="SqlTypeSpecifier">
+						<Property Name="IsMax" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<References ExternalSource="BuiltIns" Name="[varchar]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlScalarFunction" Name="[dbo].[ufn_GetHashFactNarudzbine]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashFactNarudzbine].[@IzvorniNarudzbine_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashFactNarudzbine].[@ZaposleniKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashFactNarudzbine].[@OdborKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashFactNarudzbine].[@GradKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashFactNarudzbine].[@VremePrikazivanjaKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashFactNarudzbine].[@KompanijaKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashFactNarudzbine].[@BrojNarudzbina]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashFactNarudzbine].[@PocetakTermina]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashFactNarudzbine].[@ZavrsetakTermina]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="FunctionBody">
+				<Entry>
+					<Element Type="SqlScriptFunctionImplementation">
+						<Property Name="BodyScript">
+							<Value><![CDATA[
+BEGIN
+	RETURN CAST( HASHBYTES( 'SHA2_512', (
+	SELECT 
+		@IzvorniNarudzbine_ID AS IzvorniNarudzbine_ID
+		,@ZaposleniKey AS ZaposleniKey
+		,@OdborKey AS OdborKey
+		,@GradKey AS GradKey
+		,@VremePrikazivanjaKey AS VremePrikazivanjaKey
+		,@KompanijaKey AS KompanijaKey
+		,@BrojNarudzbina AS BrojNarudzbina
+		,@PocetakTermina AS PocetakTermina
+		,@ZavrsetakTermina AS ZavrsetakTermina
+	FOR XML RAW('R'))) AS INT )
+END]]></Value>
+						</Property>
+						<Annotation Type="SysCommentsObjectAnnotation">
+							<Property Name="Length" Value="718" />
+							<Property Name="StartLine" Value="1" />
+							<Property Name="StartColumn" Value="1" />
+							<Property Name="HeaderContents" Value="CREATE FUNCTION dbo.ufn_GetHashFactNarudzbine&#xD;&#xA;(&#xD;&#xA;&#x9;@IzvorniNarudzbine_ID INT&#xD;&#xA;&#x9;,@ZaposleniKey INT&#xD;&#xA;&#x9;,@OdborKey INT&#xD;&#xA;&#x9;,@GradKey INT&#xD;&#xA;&#x9;,@VremePrikazivanjaKey INT&#xD;&#xA;&#x9;,@KompanijaKey INT&#xD;&#xA;&#x9;,@BrojNarudzbina INT&#xD;&#xA;&#x9;,@PocetakTermina DATETIME&#xD;&#xA;&#x9;,@ZavrsetakTermina DATETIME &#xD;&#xA;)&#xD;&#xA;RETURNS VARCHAR(MAX)&#xD;&#xA;AS" />
+						</Annotation>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashFactNarudzbine].[@IzvorniNarudzbine_ID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashFactNarudzbine].[@ZaposleniKey]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashFactNarudzbine].[@OdborKey]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashFactNarudzbine].[@GradKey]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashFactNarudzbine].[@VremePrikazivanjaKey]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashFactNarudzbine].[@KompanijaKey]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashFactNarudzbine].[@BrojNarudzbina]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashFactNarudzbine].[@PocetakTermina]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashFactNarudzbine].[@ZavrsetakTermina]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[datetime]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Type">
+				<Entry>
+					<Element Type="SqlTypeSpecifier">
+						<Property Name="IsMax" Value="True" />
+						<Relationship Name="Type">
+							<Entry>
+								<References ExternalSource="BuiltIns" Name="[varchar]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlScalarFunction" Name="[dbo].[ufn_GetHashFactReklama]">
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[int]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashFactReklama].[@IzvorniReklama_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashFactReklama].[@TVkanaliKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashFactReklama].[@PrivrednaGranaKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashFactReklama].[@AgencijaKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashFactReklama].[@OdborKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashFactReklama].[@GradKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashFactReklama].[@VremePrikazivanjaKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashFactReklama].[@KompanijaKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashFactReklama].[@BrojPrikaza]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashFactReklama].[@TrajanjeReklame]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashFactReklama].[@CenaReklame]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="FunctionBody">
+				<Entry>
+					<Element Type="SqlScriptFunctionImplementation">
+						<Property Name="BodyScript">
+							<Value><![CDATA[
+BEGIN
+	RETURN CAST( HASHBYTES( 'SHA2_512', (
+	SELECT 
+		@IzvorniReklama_ID AS IzvorniReklama_ID
+		,@TVkanaliKey AS TVkanaliKey
+		,@PrivrednaGranaKey AS PrivrednaGranaKey
+		,@AgencijaKey AS AgencijaKey
+		,@OdborKey AS OdborKey
+		,@GradKey AS GradKey
+		,@VremePrikazivanjaKey AS VremePrikazivanjaKey
+		,@KompanijaKey AS KompanijaKey
+		,@BrojPrikaza AS BrojPrikaza
+		,@TrajanjeReklame AS TrajanjeReklame
+		,@CenaReklame AS CenaReklame
+	FOR XML RAW('R'))) AS INT )
+END]]></Value>
+						</Property>
+						<Annotation Type="SysCommentsObjectAnnotation">
+							<Property Name="Length" Value="784" />
+							<Property Name="StartLine" Value="1" />
+							<Property Name="StartColumn" Value="1" />
+							<Property Name="HeaderContents" Value="CREATE FUNCTION dbo.ufn_GetHashFactReklama&#xD;&#xA;(&#xD;&#xA;&#x9;@IzvorniReklama_ID INT&#xD;&#xA;&#x9;,@TVkanaliKey INT&#xD;&#xA;&#x9;,@PrivrednaGranaKey INT&#xD;&#xA;&#x9;,@AgencijaKey INT&#xD;&#xA;&#x9;,@OdborKey INT&#xD;&#xA;&#x9;,@GradKey INT&#xD;&#xA;&#x9;,@VremePrikazivanjaKey INT&#xD;&#xA;&#x9;,@KompanijaKey INT&#xD;&#xA;&#x9;,@BrojPrikaza INT&#xD;&#xA;&#x9;,@TrajanjeReklame INT&#xD;&#xA;&#x9;,@CenaReklame INT&#xD;&#xA;)&#xD;&#xA;RETURNS INT&#xD;&#xA;AS" />
+						</Annotation>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashFactReklama].[@IzvorniReklama_ID]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashFactReklama].[@TVkanaliKey]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashFactReklama].[@PrivrednaGranaKey]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashFactReklama].[@AgencijaKey]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashFactReklama].[@OdborKey]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashFactReklama].[@GradKey]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashFactReklama].[@VremePrikazivanjaKey]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashFactReklama].[@KompanijaKey]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashFactReklama].[@BrojPrikaza]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashFactReklama].[@TrajanjeReklame]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[ufn_GetHashFactReklama].[@CenaReklame]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Type">
+				<Entry>
+					<Element Type="SqlTypeSpecifier">
+						<Relationship Name="Type">
+							<Entry>
+								<References ExternalSource="BuiltIns" Name="[int]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[usp_PopulationDimAgencija]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	BEGIN TRANSACTION
+		
+		MERGE dbo.DimAgencija AS TARGET
+		USING (
+			SELECT 
+				dbo.CreateKeyFromSourceID(Agencija_ID) AS AgencijaKey,
+				Agencija_ID AS IzvorniAgencija_ID,
+				Naziv AS NazivAgencije,
+				Srediste AS SredisteAgencije,
+				Adresa AS AdresaAgencije,
+				Telefon AS TelefonAgencije,
+				Email AS EmailAgencije,
+				dbo.ufn_GetHashDimAgencija(
+					Agencija_ID,
+					Naziv,
+					Srediste,
+					Adresa,
+					Telefon,
+					Email
+				) AS HashKey
+			FROM [$(RDA)].dbo.Agencija
+		) AS SOURCE ON ( TARGET.HashKey = SOURCE.HashKey )
+		WHEN MATCHED THEN
+			UPDATE
+			   SET TARGET.NazivAgencije = SOURCE.NazivAgencije
+				   ,TARGET.SredisteAgencije = SOURCE.SredisteAgencije
+				   ,TARGET.AdresaAgencije = SOURCE.AdresaAgencije
+				   ,TARGET.TelefonAgencije = SOURCE.TelefonAgencije
+				   ,TARGET.EmailAgencije = SOURCE.EmailAgencije
+		WHEN NOT MATCHED BY TARGET THEN
+			INSERT ( 
+				AgencijaKey
+				,IzvorniAgencija_ID
+				,NazivAgencije
+				,SredisteAgencije
+				,AdresaAgencije
+				,TelefonAgencije
+				,EmailAgencije
+				,HashKey
+				,Obrisan		
+			)
+			VALUES (
+				SOURCE.AgencijaKey
+				,SOURCE.IzvorniAgencija_ID
+				,SOURCE.NazivAgencije
+				,SOURCE.SredisteAgencije
+				,SOURCE.AdresaAgencije
+				,SOURCE.TelefonAgencije
+				,SOURCE.EmailAgencije
+				,SOURCE.HashKey
+				,NULL
+			)
+		WHEN NOT MATCHED BY SOURCE THEN UPDATE SET Obrisan = 1;
+
+	IF @@ERROR <> 0
+		BEGIN
+			ROLLBACK;
+		END
+	ELSE
+		BEGIN
+			COMMIT;
+		END
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Agencija]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Agencija].[Agencija_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Agencija].[Naziv]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Agencija].[Srediste]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Agencija].[Adresa]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Agencija].[Telefon]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Agencija].[Email]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimAgencija]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimAgencija]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimAgencija].[HashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimAgencija]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimAgencija].[NazivAgencije]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Agencija].[Naziv]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimAgencija].[SredisteAgencije]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Agencija].[Srediste]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimAgencija].[AdresaAgencije]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Agencija].[Adresa]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimAgencija].[TelefonAgencije]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Agencija].[Telefon]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimAgencija].[EmailAgencije]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Agencija].[Email]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimAgencija].[AgencijaKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimAgencija].[IzvorniAgencija_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimAgencija].[NazivAgencije]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimAgencija].[SredisteAgencije]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimAgencija].[AdresaAgencije]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimAgencija].[TelefonAgencije]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimAgencija].[EmailAgencije]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimAgencija].[HashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimAgencija].[Obrisan]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimAgencija]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1562" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE dbo.usp_PopulationDimAgencija&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[usp_PopulationDimGrad]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	BEGIN TRANSACTION
+
+	MERGE dbo.DimGrad AS TARGET
+	USING (
+		SELECT 
+			dbo.CreateKeyFromSourceID(G.Grad_ID) AS GradKey
+			,G.Grad_ID AS IzvorniGradID 
+			,G.Naziv AS NazivGrada
+			,R.Naziv AS NazivRegiona
+			,dbo.ufn_GetHashDimGrad(
+				R.Region_ID
+				,R.Naziv
+				,G.Naziv
+			) AS HashKey
+		FROM [$(RDA)].dbo.Grad AS G WITH (NOLOCK)
+			INNER JOIN [$(RDA)].dbo.Region AS R WITH (NOLOCK) ON G.Region_ID=R.Region_ID
+	) AS SOURCE ON ( TARGET.HashKey = SOURCE.HashKey )
+	WHEN MATCHED THEN
+		UPDATE
+			SET TARGET.NazivRegiona = SOURCE.NazivRegiona
+				,TARGET.NazivGrada = SOURCE.NazivGrada
+	WHEN NOT MATCHED BY TARGET THEN
+		INSERT (
+			GradKey
+			,IzvorniGrad_ID
+			,NazivGrada
+			,NazivRegiona
+			,HashKey
+			,Obrisan
+		) 
+		VALUES (
+			SOURCE.GradKey
+			,SOURCE.IzvorniGradID
+			,SOURCE.NazivGrada
+			,SOURCE.NazivRegiona
+			,SOURCE.HashKey
+			,NULL
+		)
+	WHEN NOT MATCHED BY SOURCE THEN UPDATE SET Obrisan = CAST( GETDATE() AS SMALLDATETIME );
+
+	IF @@ERROR <> 0
+		BEGIN
+			ROLLBACK;
+		END
+	ELSE
+		BEGIN
+			COMMIT;
+		END
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Grad]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Region]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Grad].[Region_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Region].[Region_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Grad].[Grad_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Grad].[Grad_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Grad].[Naziv]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Region].[Naziv]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Region].[Naziv]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Grad].[Naziv]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimGrad]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimGrad]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimGrad].[HashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimGrad]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimGrad].[NazivRegiona]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Region].[Naziv]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimGrad].[NazivGrada]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Grad].[Naziv]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimGrad].[GradKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimGrad].[IzvorniGrad_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimGrad].[NazivGrada]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimGrad].[NazivRegiona]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimGrad].[HashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimGrad].[Obrisan]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Grad].[Grad_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Grad].[Naziv]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Region].[Naziv]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimGrad]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[smalldatetime]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1126" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE dbo.usp_PopulationDimGrad&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[usp_PopulationDimKompanija]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	BEGIN TRANSACTION
+
+	MERGE dbo.DimKompanija AS TARGET
+	USING (
+		SELECT 
+			dbo.CreateKeyFromSourceID(Kompanija_ID) AS KompanijaKey
+			,Kompanija_ID AS IzvorniKompanija_ID
+			,Naziv AS NazivKompanije
+			,Sifra AS SifraKompanije
+			,Sediste AS SedisteKompanije
+			,dbo.ufn_GetHashDimKompanija(
+				Kompanija_ID
+				,Naziv
+				,Sifra
+				,Sediste
+			) AS HashKey
+		FROM [$(RDA)].dbo.Kompanija
+	) AS SOURCE ON ( TARGET.HashKey = SOURCE.HashKey )
+	WHEN MATCHED THEN 
+		UPDATE
+			SET TARGET.NazivKompanije = SOURCE.NazivKompanije
+				,TARGET.SifraKompanije = SOURCE.SifraKompanije
+				,TARGET.SedisteKompanije = SOURCE.SedisteKompanije
+	WHEN NOT MATCHED BY TARGET THEN
+		INSERT (
+			KompanijaKey
+			,IzvorniKompanija_ID
+			,NazivKompanije
+			,SedisteKompanije
+			,SifraKompanije
+			,HashKey
+			,Obrisan
+		)
+		VALUES (
+			SOURCE.KompanijaKey
+			,SOURCE.IzvorniKompanija_ID
+			,SOURCE.NazivKompanije
+			,SOURCE.SedisteKompanije
+			,SOURCE.SifraKompanije
+			,SOURCE.HashKey
+			,NULL
+		)
+	WHEN NOT MATCHED BY SOURCE THEN UPDATE SET Obrisan = CAST( GETDATE() AS SMALLDATETIME );
+
+	IF @@ERROR <> 0
+		BEGIN
+			ROLLBACK;
+		END
+	ELSE
+		BEGIN
+			COMMIT;
+		END
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Kompanija]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Kompanija].[Kompanija_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Kompanija].[Naziv]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Kompanija].[Sifra]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Kompanija].[Sediste]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimKompanija]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimKompanija]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimKompanija].[HashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimKompanija]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimKompanija].[NazivKompanije]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Kompanija].[Naziv]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimKompanija].[SifraKompanije]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Kompanija].[Sifra]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimKompanija].[SedisteKompanije]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Kompanija].[Sediste]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimKompanija].[KompanijaKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimKompanija].[IzvorniKompanija_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimKompanija].[NazivKompanije]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimKompanija].[SedisteKompanije]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimKompanija].[SifraKompanije]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimKompanija].[HashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimKompanija].[Obrisan]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimKompanija]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[smalldatetime]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1260" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE dbo.usp_PopulationDimKompanija&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[usp_PopulationDimOdbor]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	BEGIN TRANSACTION
+
+		MERGE dbo.DimOdbor AS TARGET
+		USING (
+			SELECT 
+				dbo.CreateKeyFromSourceID(O.Odbor_ID) AS OdborKey
+				,O.Odbor_ID AS IzvorniOdborID
+				,O.Naziv AS NazivOdbora
+				,PS.Naziv AS NazivPolitickeStranke
+				,PS.Opstina AS NazivOpstine
+				,dbo.ufn_GetHashDimOdbor(
+					O.Odbor_ID
+					,O.Naziv
+					,PS.Naziv
+					,PS.Opstina
+				) AS HashKey
+			FROM [$(RDA)].dbo.Politicka_stranka AS PS WITH (NOLOCK)
+				INNER JOIN [$(RDA)].dbo.Odbor AS O WITH (NOLOCK) ON O.Politicka_stranka_ID=PS.Politicka_stranka_ID
+		) AS SOURCE ON ( TARGET.HashKey = SOURCE.HashKey )
+		WHEN MATCHED THEN 
+			UPDATE
+				SET TARGET.NazivOdbora = SOURCE.NazivOdbora 
+				,TARGET.NazivPolitickeStranke = SOURCE.NazivPolitickeStranke
+				,TARGET.NazivOpstine = SOURCE.NazivOpstine
+		WHEN NOT MATCHED BY TARGET THEN 
+		INSERT (
+			OdborKey
+			,IzvorniOdbor_ID
+			,NazivOdbora
+			,NazivPolitickeStranke
+			,NazivOpstine
+			,HashKey-->DONE
+			,Obrisan
+		)
+		VALUES (
+			SOURCE.OdborKey
+			,SOURCE.IzvorniOdborID
+			,SOURCE.NazivOdbora
+			,SOURCE.NazivPolitickeStranke
+			,SOURCE.NazivOpstine
+			,SOURCE.HashKey
+			,NULL
+		)
+		WHEN NOT MATCHED BY SOURCE THEN UPDATE SET Obrisan = CAST( GETDATE() AS SMALLDATETIME );
+
+	IF @@ERROR <> 0
+		BEGIN
+			ROLLBACK;
+		END
+	ELSE
+		BEGIN
+			COMMIT;
+		END
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Politicka_stranka]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Odbor]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Odbor].[Politicka_stranka_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Politicka_stranka].[Politicka_stranka_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Odbor].[Odbor_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Odbor].[Odbor_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Odbor].[Naziv]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Politicka_stranka].[Naziv]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Politicka_stranka].[Opstina]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Odbor].[Naziv]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Politicka_stranka].[Naziv]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Politicka_stranka].[Opstina]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimOdbor]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimOdbor]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimOdbor].[HashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimOdbor]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimOdbor].[NazivOdbora]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Odbor].[Naziv]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimOdbor].[NazivPolitickeStranke]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Politicka_stranka].[Naziv]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimOdbor].[NazivOpstine]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Politicka_stranka].[Opstina]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimOdbor].[OdborKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimOdbor].[IzvorniOdbor_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimOdbor].[NazivOdbora]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimOdbor].[NazivPolitickeStranke]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimOdbor].[NazivOpstine]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimOdbor].[HashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimOdbor].[Obrisan]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Odbor].[Odbor_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Odbor].[Naziv]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Politicka_stranka].[Naziv]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Politicka_stranka].[Opstina]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimOdbor]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[smalldatetime]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1394" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE dbo.usp_PopulationDimOdbor&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[usp_PopulationDimPrivrednaGrana]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	BEGIN TRANSACTION
+
+		MERGE dbo.DimPrivrednaGrana AS TARGET
+		USING (
+			SELECT  
+				dbo.CreateKeyFromSourceID(Priv_Grana_ID) AS PrivrednaGranaKey
+				,Priv_Grana_ID AS IzvorniPrivrednaGranaID
+				,Naziv AS NazivPrivredneGrane
+				,dbo.ufn_GetHashDimPrivrednaGrana(
+					Priv_Grana_ID
+					,Naziv
+				) AS HashKey
+			FROM [$(RDA)].dbo.Privredna_grana
+		) AS SOURCE ON ( TARGET.HashKey = SOURCE.HashKey )
+		WHEN MATCHED THEN
+			UPDATE
+				SET TARGET.NazivPrivredneGrane = SOURCE.NazivPrivredneGrane
+		WHEN NOT MATCHED BY TARGET THEN
+			INSERT (
+					PrivrednaGranaKey
+					,IzvorniPrivrednaGrana_ID
+					,NazivPrivredneGrane
+					,HashKey
+					,Obrisan
+				)
+			VALUES (
+					SOURCE.PrivrednaGranaKey
+					,SOURCE.IzvorniPrivrednaGranaID
+					,SOURCE.NazivPrivredneGrane
+					,SOURCE.HashKey
+					,NULL
+				)
+		WHEN NOT MATCHED BY SOURCE THEN UPDATE SET Obrisan = 1;
+
+	IF @@ERROR <> 0
+		BEGIN
+			ROLLBACK;
+		END
+	ELSE
+		BEGIN
+			COMMIT;
+		END
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Privredna_grana]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Privredna_grana].[Priv_grana_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Privredna_grana].[Naziv]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimPrivrednaGrana]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimPrivrednaGrana]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimPrivrednaGrana].[HashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimPrivrednaGrana]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimPrivrednaGrana].[NazivPrivredneGrane]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Privredna_grana].[Naziv]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimPrivrednaGrana].[PrivrednaGranaKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimPrivrednaGrana].[IzvorniPrivrednaGrana_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimPrivrednaGrana].[NazivPrivredneGrane]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimPrivrednaGrana].[HashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimPrivrednaGrana].[Obrisan]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimPrivrednaGrana]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1053" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE dbo.usp_PopulationDimPrivrednaGrana&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[usp_PopulationDimTVKanali]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	BEGIN TRANSACTION
+
+		MERGE dbo.DimTVKanali AS TARGET
+		USING (
+			SELECT 
+				dbo.CreateKeyFromSourceID(K.Kanali_ID) AS TVkanaliKey
+				,K.Kanali_ID AS IzvorniKanali_ID
+				,K.Naziv AS NazivKanala
+				,TV.Naziv AS TVkuca
+				,TV.Sediste AS SedisteTVkuca
+				,TV.Adresa AS AdresaTVkuca
+				,TV.Email AS EmailTVkuca
+				,TV.Telefon AS TelefonTVkuca 
+				,SV.Opis_strukture_vlasnistva AS VrstaVlasnistva
+				,dbo.ufn_GetHashDimTVkanali(
+					K.Kanali_ID
+					,K.Naziv
+					,TV.Naziv
+					,TV.Sediste
+					,TV.Adresa
+					,TV.Email
+					,TV.Telefon
+					,SV.Opis_strukture_vlasnistva
+				) AS HashKey
+			FROM [$(RDA)].dbo.Struktura_vlasnistva AS SV WITH (NOLOCK)
+				INNER JOIN [$(RDA)].dbo.TV_kuca AS TV WITH (NOLOCK) ON TV.Struktura_vlasnistva_ID=SV.Struktura_vlasnistva_ID
+				INNER JOIN[$(RDA)].dbo.Kanali AS K WITH (NOLOCK) ON K.TV_kuca_ID=TV.TV_kuca_ID
+		) AS SOURCE ON ( TARGET.HashKey = SOURCE.HashKey  )
+		WHEN MATCHED THEN
+			UPDATE
+				SET TARGET.NazivKanala = SOURCE.NazivKanala
+					,TARGET.TVkuca = SOURCE.TVkuca
+					,TARGET.SedisteTVkuca = SOURCE.SedisteTVkuca
+					,TARGET.AdresaTVkuca = SOURCE.AdresaTVkuca
+					,TARGET.EmailTVkuca = SOURCE.EmailTVkuca
+					,TARGET.TelefonTVkuca = SOURCE.TelefonTVkuca
+					,TARGET.VrstaVlasnistva = SOURCE.VrstaVlasnistva
+		WHEN NOT MATCHED BY TARGET THEN
+			INSERT ( 
+				TVkanaliKey
+				,IzvorniKanali_ID
+				,NazivKanala
+				,TVkuca
+				,SedisteTVkuca
+				,AdresaTVkuca
+				,EmailTVkuca
+				,TelefonTVkuca
+				,VrstaVlasnistva
+				,HashKey
+				,Obrisan		
+			)
+			VALUES (
+				SOURCE.TVkanaliKey
+				,SOURCE.IzvorniKanali_ID
+				,SOURCE.NazivKanala
+				,SOURCE.TVkuca
+				,SOURCE.SedisteTVkuca
+				,SOURCE.AdresaTVkuca
+				,SOURCE.EmailTVkuca
+				,SOURCE.TelefonTVkuca 
+				,SOURCE.VrstaVlasnistva
+				,SOURCE.HashKey
+				,NULL
+			)
+		WHEN NOT MATCHED BY SOURCE THEN UPDATE SET Obrisan = 1;
+
+	IF @@ERROR <> 0
+		BEGIN
+			ROLLBACK;
+		END
+	ELSE
+		BEGIN
+			COMMIT;
+		END
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Struktura_vlasnistva]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[TV_kuca]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[TV_kuca].[Struktura_vlasnistva_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Struktura_vlasnistva].[Struktura_vlasnistva_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Kanali]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Kanali].[TV_kuca_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[TV_kuca].[TV_kuca_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Kanali].[Kanali_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Kanali].[Kanali_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Kanali].[Naziv]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[TV_kuca].[Naziv]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[TV_kuca].[Sediste]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[TV_kuca].[Adresa]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[TV_kuca].[Email]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[TV_kuca].[Telefon]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Struktura_vlasnistva].[Opis_strukture_vlasnistva]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Kanali].[Naziv]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[TV_kuca].[Naziv]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[TV_kuca].[Sediste]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[TV_kuca].[Adresa]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[TV_kuca].[Email]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[TV_kuca].[Telefon]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Struktura_vlasnistva].[Opis_strukture_vlasnistva]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimTVkanali]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimTVkanali]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimTVkanali].[HashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimTVkanali]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimTVkanali].[NazivKanala]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Kanali].[Naziv]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimTVkanali].[TVkuca]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[TV_kuca].[Naziv]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimTVkanali].[SedisteTVkuca]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[TV_kuca].[Sediste]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimTVkanali].[AdresaTVkuca]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[TV_kuca].[Adresa]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimTVkanali].[EmailTVkuca]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[TV_kuca].[Email]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimTVkanali].[TelefonTVkuca]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[TV_kuca].[Telefon]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimTVkanali].[VrstaVlasnistva]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Struktura_vlasnistva].[Opis_strukture_vlasnistva]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimTVkanali].[TVkanaliKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimTVkanali].[IzvorniKanali_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimTVkanali].[NazivKanala]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimTVkanali].[TVkuca]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimTVkanali].[SedisteTVkuca]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimTVkanali].[AdresaTVkuca]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimTVkanali].[EmailTVkuca]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimTVkanali].[TelefonTVkuca]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimTVkanali].[VrstaVlasnistva]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimTVkanali].[HashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimTVkanali].[Obrisan]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Kanali].[Kanali_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Kanali].[Naziv]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[TV_kuca].[Naziv]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[TV_kuca].[Sediste]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[TV_kuca].[Adresa]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[TV_kuca].[Email]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[TV_kuca].[Telefon]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Struktura_vlasnistva].[Opis_strukture_vlasnistva]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimTVkanali]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="2055" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE dbo.usp_PopulationDimTVKanali&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[usp_PopulationDimZaposleni]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	BEGIN TRANSACTION
+
+	MERGE [dbo].[DimZaposleni] AS TARGET
+	USING (
+		SELECT 
+			dbo.CreateKeyFromSourceID(Z.Zaposleni_ID) AS ZaposleniKey
+			,Z.Zaposleni_ID AS IzvorniZaposleni_ID
+			,Z.Ime AS ImeZaposlenog
+			,Z.Prezime AS PrezimeZaposlenog
+			,Z.JMBG AS JmbgZaposlenog
+			,Z.Email AS EmailZaposlenog
+			,PZ.Pozicija AS PozicijaZaposlenog
+			,dbo.ufn_GetHashDimZaposleni(
+				Z.Zaposleni_ID
+				,Z.Ime
+				,Z.Prezime
+				,Z.JMBG
+				,Z.Email
+				,PZ.Pozicija
+			) AS HashKey
+		FROM [$(RDA)].dbo.Zaposleni AS Z WITH (NOLOCK)
+			INNER JOIN [$(RDA)].dbo.Pozicija_zaposlenog AS PZ WITH (NOLOCK) ON Z.Poz_zaposlenog_ID=PZ.Poz_zaposlenog_ID
+	) AS SOURCE ON ( TARGET.HashKey = SOURCE.HashKey )
+	WHEN MATCHED THEN
+		UPDATE
+			SET TARGET.ImeZaposlenog = SOURCE.ImeZaposlenog
+				,TARGET.PrezimeZaposlenog = SOURCE.PrezimeZaposlenog
+				,TARGET.JmbgZaposlenog = SOURCE.JmbgZaposlenog
+				,TARGET.EmailZaposlenog = SOURCE.EmailZaposlenog
+				,TARGET.PozicijaZaposlenog = SOURCE.PozicijaZaposlenog
+	WHEN NOT MATCHED BY TARGET THEN
+		INSERT(
+			ZaposleniKey
+			,IzvorniZaposleni_ID
+			,ImeZaposlenog
+			,PrezimeZaposlenog
+			,JmbgZaposlenog
+			,EmailZaposlenog
+			,PozicijaZaposlenog
+			,HashKey
+			,Obrisan
+		)
+		VALUES(
+			SOURCE.ZaposleniKey
+			,SOURCE.IzvorniZaposleni_ID
+			,SOURCE.ImeZaposlenog
+			,SOURCE.PrezimeZaposlenog
+			,SOURCE.JmbgZaposlenog
+			,SOURCE.EmailZaposlenog
+			,SOURCE.PozicijaZaposlenog
+			,SOURCE.HashKey
+			,NULL
+		)
+	WHEN NOT MATCHED BY SOURCE THEN UPDATE SET Obrisan = CAST( GETDATE() AS SMALLDATETIME );
+
+	IF @@ERROR <> 0
+		BEGIN
+			ROLLBACK;
+		END
+	ELSE
+		BEGIN
+			COMMIT;
+		END
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Zaposleni]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Pozicija_zaposlenog]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Zaposleni].[Poz_zaposlenog_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Pozicija_zaposlenog].[Poz_zaposlenog_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Zaposleni].[Zaposleni_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Zaposleni].[Zaposleni_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Zaposleni].[Ime]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Zaposleni].[Prezime]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Zaposleni].[JMBG]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Zaposleni].[Email]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Pozicija_zaposlenog].[Pozicija]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Zaposleni].[Ime]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Zaposleni].[Prezime]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Zaposleni].[JMBG]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Zaposleni].[Email]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Pozicija_zaposlenog].[Pozicija]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimZaposleni]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimZaposleni]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimZaposleni].[HashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimZaposleni]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimZaposleni].[ImeZaposlenog]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Zaposleni].[Ime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimZaposleni].[PrezimeZaposlenog]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Zaposleni].[Prezime]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimZaposleni].[JmbgZaposlenog]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Zaposleni].[JMBG]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimZaposleni].[EmailZaposlenog]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Zaposleni].[Email]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimZaposleni].[PozicijaZaposlenog]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Pozicija_zaposlenog].[Pozicija]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimZaposleni].[ZaposleniKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimZaposleni].[IzvorniZaposleni_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimZaposleni].[ImeZaposlenog]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimZaposleni].[PrezimeZaposlenog]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimZaposleni].[JmbgZaposlenog]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimZaposleni].[EmailZaposlenog]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimZaposleni].[PozicijaZaposlenog]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimZaposleni].[HashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimZaposleni].[Obrisan]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Zaposleni].[Zaposleni_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Zaposleni].[Ime]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Zaposleni].[Prezime]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Zaposleni].[JMBG]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Zaposleni].[Email]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Pozicija_zaposlenog].[Pozicija]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashDimZaposleni]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[smalldatetime]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="1727" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].usp_PopulationDimZaposleni&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[usp_PopulationFactNarudzbenice]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	BEGIN TRANSACTION
+
+		MERGE dbo.FactNarudzbenice AS TARGET
+		USING(
+			SELECT
+				dbo.CreateKeyFromSourceID( CAST( N.Narudzbenica_ID AS VARCHAR ) + '-||-' + CAST( SN.Stavka_narudzenice_ID AS VARCHAR ) + 
+					'-||-' + CAST( O.Odbor_ID AS VARCHAR ) + '-||-' + CAST( G.Grad_ID AS VARCHAR ) + 
+					'-||-' + CAST( P.Prikazuje_ID AS VARCHAR ) + '-||-' + CAST( K.Kompanija_ID AS VARCHAR ) + 
+					'-||-' + CAST( Z.Zaposleni_ID AS VARCHAR )
+				) AS NarudzbeniceKey
+				,SN.Stavka_Narudzenice_ID AS IzvorniStavkaNarudzbenice_ID
+				,dbo.CreateKeyFromSourceID(O.Odbor_ID) AS OdborKey
+				,dbo.CreateKeyFromSourceID(G.Grad_ID) AS GradKey
+				,dbo.CreateKeyFromDate(P.Termin_Prikaza_Od) AS VremePrikazivanjaKey
+				,dbo.CreateKeyFromSourceID(K.Kompanija_ID) AS KompanijaKey
+				,dbo.CreateKeyFromSourceID(Z.Zaposleni_ID) AS ZaposleniKey
+				,SN.Kolicina AS BrojNarudzbenica
+				,P.Termin_Prikaza_Od AS PocetakTermina
+				,P.Termin_Prikaza_Do AS ZavrsetakTermina
+				,dbo.ufn_GetHashFactNarudzbine(
+					SN.Stavka_Narudzenice_ID
+					,dbo.CreateKeyFromSourceID(Z.Zaposleni_ID)
+					,dbo.CreateKeyFromSourceID(O.Odbor_ID)
+					,dbo.CreateKeyFromSourceID(G.Grad_ID)
+					,dbo.CreateKeyFromSourceID(P.Prikazuje_ID)
+					,dbo.CreateKeyFromSourceID(K.Kompanija_ID)
+					,SN.Kolicina
+					,P.Termin_Prikaza_Od
+					,P.Termin_Prikaza_Do
+				) AS HashKey
+			FROM [$(RDA)].dbo.Stavka_narudzenice AS SN WITH (NOLOCK)
+				INNER JOIN [$(RDA)].dbo.Narudzbenica AS N WITH (NOLOCK) ON SN.Narudzbenica_ID=N.Narudzbenica_ID
+				INNER JOIN [$(RDA)].dbo.Kompanija AS K WITH (NOLOCK) ON N.Kompanija_ID=K.Kompanija_ID
+				INNER JOIN [$(RDA)].dbo.Zaposleni AS Z WITH (NOLOCK) ON N.Zaposleni_ID=Z.Zaposleni_ID
+				INNER JOIN [$(RDA)].dbo.Agencija AS A WITH (NOLOCK) ON Z.Agencija_ID=A.Agencija_ID
+				INNER JOIN [$(RDA)].dbo.Reklama AS R WITH (NOLOCK) ON R.Agencija_ID=A.Agencija_ID
+				INNER JOIN [$(RDA)].dbo.Odbor AS O WITH (NOLOCK) ON R.Odbor_ID=O.Odbor_ID
+				INNER JOIN [$(RDA)].dbo.Grad AS G WITH (NOLOCK) ON O.Grad_ID=G.Grad_ID
+				INNER JOIN [$(RDA)].dbo.Prikazuje AS P WITH (NOLOCK) ON P.Reklama_ID=R.Reklama_ID
+		) AS SOURCE ON ( TARGET.HashKey = SOURCE.HashKey )
+		WHEN MATCHED THEN 
+			UPDATE
+				SET TARGET.ZaposleniKey = SOURCE.ZaposleniKey
+					,TARGET.OdborKey = SOURCE.OdborKey
+					,TARGET.GradKey = SOURCE.GradKey
+					,TARGET.VremePrikazivanjaKey = SOURCE.VremePrikazivanjaKey
+					,TARGET.KompanijaKey = SOURCE.KompanijaKey
+					,TARGET.PocetakTermina = SOURCE.PocetakTermina
+					,TARGET.ZavrsetakTermina = SOURCE.ZavrsetakTermina
+		WHEN NOT MATCHED BY TARGET THEN
+			INSERT(
+				NarudzbeniceKey
+				,IzvorniStavkaNarudzbenice_ID
+				,ZaposleniKey
+				,OdborKey
+				,GradKey
+				,VremePrikazivanjaKey
+				,KompanijaKey
+				,BrojNarudzbenica
+				,PocetakTermina
+				,ZavrsetakTermina
+				,HashKey
+				,Obrisan
+			)
+			VALUES(
+				SOURCE.NarudzbeniceKey
+				,SOURCE.IzvorniStavkaNarudzbenice_ID
+				,SOURCE.ZaposleniKey
+				,SOURCE.OdborKey
+				,SOURCE.GradKey
+				,SOURCE.VremePrikazivanjaKey
+				,SOURCE.KompanijaKey
+				,SOURCE.BrojNarudzbenica
+				,SOURCE.PocetakTermina
+				,SOURCE.ZavrsetakTermina
+				,SOURCE.HashKey
+				,NULL
+			)
+		WHEN NOT MATCHED BY SOURCE THEN UPDATE SET Obrisan = CAST( GETDATE() AS SMALLDATETIME );
+
+	IF @@ERROR <> 0
+		BEGIN
+			ROLLBACK;
+		END
+	ELSE
+		BEGIN
+			COMMIT;
+		END
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Stavka_narudzenice]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Narudzbenica]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Stavka_narudzenice].[Narudzbenica_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Narudzbenica].[Narudzbenica_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Kompanija]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Narudzbenica].[Kompanija_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Kompanija].[Kompanija_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Zaposleni]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Narudzbenica].[Zaposleni_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Zaposleni].[Zaposleni_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Agencija]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Zaposleni].[Agencija_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Agencija].[Agencija_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Reklama]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Reklama].[Agencija_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Agencija].[Agencija_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Odbor]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Reklama].[Odbor_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Odbor].[Odbor_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Grad]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Odbor].[Grad_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Grad].[Grad_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Prikazuje]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Prikazuje].[Reklama_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Reklama].[Reklama_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Narudzbenica].[Narudzbenica_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Stavka_narudzenice].[Stavka_narudzenice_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Odbor].[Odbor_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Grad].[Grad_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Prikazuje].[Prikazuje_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Kompanija].[Kompanija_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Zaposleni].[Zaposleni_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Stavka_narudzenice].[Stavka_narudzenice_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Prikazuje].[Termin_prikaza_Od]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Stavka_narudzenice].[Kolicina]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Prikazuje].[Termin_prikaza_Od]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Prikazuje].[Termin_prikaza_Do]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Stavka_narudzenice].[Stavka_narudzenice_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Stavka_narudzenice].[Kolicina]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Prikazuje].[Termin_prikaza_Do]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashFactNarudzbine]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[HashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashFactNarudzbine]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[ZaposleniKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[OdborKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[GradKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[VremePrikazivanjaKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[KompanijaKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[PocetakTermina]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Prikazuje].[Termin_prikaza_Od]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[ZavrsetakTermina]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Prikazuje].[Termin_prikaza_Do]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[NarudzbeniceKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[IzvorniStavkaNarudzbenice_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[ZaposleniKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[OdborKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[GradKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[VremePrikazivanjaKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[KompanijaKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[BrojNarudzbenica]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[PocetakTermina]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[ZavrsetakTermina]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[HashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[Obrisan]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Stavka_narudzenice].[Stavka_narudzenice_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Stavka_narudzenice].[Kolicina]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Prikazuje].[Termin_prikaza_Od]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Prikazuje].[Termin_prikaza_Do]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashFactNarudzbine]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[smalldatetime]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="3449" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE dbo.usp_PopulationFactNarudzbenice&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[usp_PopulationFactReklama]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+BEGIN
+	BEGIN TRANSACTION
+
+	MERGE FactReklama AS TARGET
+	USING
+	(
+		SELECT 
+			dbo.CreateKeyFromSourceID( 
+				'_||_' + CAST( R.Reklama_ID AS VARCHAR ) + '_||_' + CAST( dbo.CreateKeyFromDate(P.Termin_Prikaza_Od) AS VARCHAR ) + '_||_' + 
+				CAST( K.Kanali_ID AS VARCHAR ) + '_||_' + CAST( A.Duzina_trajanja AS VARCHAR ) + '_||_' + 
+				CAST( A.Cena AS VARCHAR ) + '_||_' + CAST( G.Grad_ID AS VARCHAR ) + '_||_' + 
+				CAST( O.Odbor_ID AS VARCHAR ) + '_||_' + CAST( A.Kompanija_ID AS VARCHAR ) + '_||_' 
+			) AS ReklamaKey 
+			,R.Reklama_ID AS IzvorniReklama_ID--
+			,dbo.CreateKeyFromSourceID(K.Kanali_ID) AS TVkanaliKey
+			,dbo.CreateKeyFromSourceID(A.Priv_grana_ID) AS PrivrednaGranaKey
+			,dbo.CreateKeyFromSourceID(A.Agencija_ID) AS AgencijaKey
+			,dbo.CreateKeyFromSourceID(O.Odbor_ID) AS OdborKey
+			,dbo.CreateKeyFromSourceID(G.Grad_ID) AS GradKey
+			,dbo.CreateKeyFromDate(P.Termin_Prikaza_Od) AS VremePrikazivanjaKey
+			,dbo.CreateKeyFromSourceID(A.Kompanija_ID) AS KompanijaKey
+			,P.Broj_prikaza AS BrojPrikaza
+			,A.Duzina_trajanja AS TrajanjeReklame
+			,A.Cena AS CenaReklame
+			,dbo.ufn_GetHashFactReklama( 
+				R.Reklama_ID,
+				K.Kanali_ID, 
+				A.Priv_grana_ID, 
+				A.Agencija_ID, 
+				O.Odbor_ID,
+				G.Grad_ID, 
+				[dbo].[CreateKeyFromDate](P.Termin_Prikaza_Od), 
+				A.Kompanija_ID, 
+				P.Broj_prikaza,
+				A.Duzina_trajanja, 
+				A.Cena 
+			) AS HashKey
+		FROM [$(RDA)].dbo.Reklama AS R
+			INNER JOIN [$(RDA)].dbo.Prikazuje AS P ON P.Reklama_ID=R.Reklama_ID
+			INNER JOIN [$(RDA)].dbo.Cenovnik AS C ON R.Cenovnik_ID=C.Cenovnik_ID
+			INNER JOIN [$(RDA)].dbo.Kanali AS K ON P.Kanali_ID=K.Kanali_ID
+			INNER JOIN [$(RDA)].dbo.Agencija AS AG ON R.Agencija_ID=AG.Agencija_ID
+			INNER JOIN [$(RDA)].dbo.Odbor AS O ON R.Odbor_ID=O.Odbor_ID
+			INNER JOIN [$(RDA)].dbo.Grad AS G ON O.Grad_ID=G.Grad_ID
+			INNER JOIN [$(RDA)].dbo.Region AS RR ON G.Region_ID=RR.Region_ID
+			INNER JOIN [$(RDA)].dbo.Politicka_stranka AS PS ON O.Politicka_stranka_ID=PS.Politicka_stranka_ID
+			INNER JOIN 
+		(
+			SELECT 
+				PG.Priv_grana_ID, 
+				KK.Kompanija_ID,
+				AAA.Agencija_ID,
+				RRR.Duzina_trajanja, 
+				CC.Cena  
+			FROM [$(RDA)].dbo.Privredna_grana AS PG
+				INNER JOIN [$(RDA)].dbo.Reklama AS RRR ON RRR.Priv_grana_ID=PG.Priv_grana_ID
+				INNER JOIN [$(RDA)].dbo.Stavka_narudzenice AS SN ON SN.Reklama_ID=RRR.Reklama_ID
+				INNER JOIN [$(RDA)].dbo.Narudzbenica AS N ON SN.Narudzbenica_ID=N.Narudzbenica_ID
+				INNER JOIN [$(RDA)].dbo.Kompanija AS KK ON N.Kompanija_ID=KK.Kompanija_ID
+				INNER JOIN [$(RDA)].dbo.Cenovnik AS CC ON RRR.Cenovnik_ID=CC.Cenovnik_ID
+				INNER JOIN [$(RDA)].dbo.Agencija AS AAA ON RRR.Agencija_ID=AAA.Agencija_ID
+		) AS A ON R.Agencija_ID=A.Agencija_ID
+	) AS SOURCE ON ( TARGET.HashKey = SOURCE.HashKey )
+	WHEN MATCHED THEN
+		UPDATE
+		   SET TARGET.[TVkanaliKey] = SOURCE.[TVkanaliKey]
+			  ,TARGET.[PrivrednaGranaKey] = SOURCE.[PrivrednaGranaKey]
+			  ,TARGET.[AgencijaKey] = SOURCE.[AgencijaKey]
+			  ,TARGET.[OdborKey] = SOURCE.[OdborKey]
+			  ,TARGET.[GradKey] = SOURCE.[GradKey]
+			  ,TARGET.[VremePrikazivanjaKey] = SOURCE.[VremePrikazivanjaKey]
+			  ,TARGET.[KompanijaKey] = SOURCE.[KompanijaKey]
+			  ,TARGET.[BrojPrikaza] = SOURCE.[BrojPrikaza]
+			  ,TARGET.[TrajanjeReklame] = SOURCE.[TrajanjeReklame]
+			  ,TARGET.[CenaReklame] = SOURCE.[CenaReklame]
+	WHEN NOT MATCHED BY TARGET THEN
+		INSERT ( 
+			ReklamaKey
+			,IzvorniReklama_ID
+			,TVkanaliKey
+			,PrivrednaGranaKey
+			,[AgencijaKey]
+			,[OdborKey]
+			,[GradKey]
+			,[VremePrikazivanjaKey]
+			,[KompanijaKey]
+			,[BrojPrikaza]
+			,[TrajanjeReklame]
+			,[CenaReklame]
+			,HashKey
+			,Obrisan				
+		)
+		VALUES (
+			SOURCE.[ReklamaKey]
+			,SOURCE.[IzvorniReklama_ID]
+			,SOURCE.[TVkanaliKey]
+			,SOURCE.[PrivrednaGranaKey]
+			,SOURCE.[AgencijaKey]
+			,SOURCE.[OdborKey]
+			,SOURCE.[GradKey]
+			,SOURCE.[VremePrikazivanjaKey]
+			,SOURCE.[KompanijaKey]
+			,SOURCE.[BrojPrikaza]
+			,SOURCE.[TrajanjeReklame]
+			,SOURCE.[CenaReklame]
+			,SOURCE.HashKey
+			,NULL
+		)
+	WHEN NOT MATCHED BY SOURCE THEN UPDATE SET Obrisan = CAST( GETDATE() AS SMALLDATETIME );
+
+
+	IF @@ERROR <> 0
+		BEGIN
+			ROLLBACK;
+			PRINT 'Nije izvrsen Transfer_factReklama';
+		END
+	ELSE
+		BEGIN
+			COMMIT;
+			PRINT 'Izvrsen je Transfer_factReklama';
+		END
+END]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Reklama]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Prikazuje]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Prikazuje].[Reklama_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Reklama].[Reklama_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Cenovnik]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Reklama].[Cenovnik_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Cenovnik].[Cenovnik_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Kanali]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Prikazuje].[Kanali_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Kanali].[Kanali_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Agencija]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Reklama].[Agencija_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Agencija].[Agencija_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Odbor]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Reklama].[Odbor_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Odbor].[Odbor_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Grad]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Odbor].[Grad_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Grad].[Grad_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Region]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Grad].[Region_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Region].[Region_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Politicka_stranka]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Odbor].[Politicka_stranka_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Politicka_stranka].[Politicka_stranka_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Privredna_grana]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Reklama].[Priv_grana_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Privredna_grana].[Priv_grana_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Stavka_narudzenice]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Stavka_narudzenice].[Reklama_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Reklama].[Reklama_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Narudzbenica]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Stavka_narudzenice].[Narudzbenica_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Narudzbenica].[Narudzbenica_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Kompanija]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Narudzbenica].[Kompanija_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Kompanija].[Kompanija_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Reklama].[Cenovnik_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Cenovnik].[Cenovnik_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Reklama].[Agencija_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Agencija].[Agencija_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Privredna_grana].[Priv_grana_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Kompanija].[Kompanija_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Reklama].[Duzina_trajanja]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Cenovnik].[Cena]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Reklama].[Agencija_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Agencija].[Agencija_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Reklama].[Reklama_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromDate]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Prikazuje].[Termin_prikaza_Od]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Kanali].[Kanali_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Reklama].[Duzina_trajanja]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Cenovnik].[Cena]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Grad].[Grad_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Odbor].[Odbor_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[varchar]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Kompanija].[Kompanija_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Reklama].[Reklama_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Privredna_grana].[Priv_grana_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Prikazuje].[Broj_prikaza]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Reklama].[Duzina_trajanja]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Cenovnik].[Cena]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Prikazuje].[Broj_prikaza]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashFactReklama]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[HashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashFactReklama]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[TVkanaliKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[PrivrednaGranaKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[AgencijaKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[OdborKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[GradKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[VremePrikazivanjaKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[KompanijaKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[BrojPrikaza]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Prikazuje].[Broj_prikaza]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[TrajanjeReklame]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Reklama].[Duzina_trajanja]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[CenaReklame]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Cenovnik].[Cena]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[ReklamaKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[IzvorniReklama_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[TVkanaliKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[PrivrednaGranaKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[AgencijaKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[OdborKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[GradKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[VremePrikazivanjaKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[KompanijaKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[BrojPrikaza]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[TrajanjeReklame]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[CenaReklame]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[HashKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[Obrisan]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Reklama].[Reklama_ID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromDate]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Prikazuje].[Broj_prikaza]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Reklama].[Duzina_trajanja]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Cenovnik].[Cena]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[ufn_GetHashFactReklama]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[smalldatetime]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="4393" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE dbo.usp_PopulationFactReklama&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+	</Model>
+</DataSchemaModel>

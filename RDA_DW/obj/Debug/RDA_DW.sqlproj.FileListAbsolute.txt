@@ -1,0 +1,14 @@
+C:\Users\tokio\source\repos\RDA\RDA_DW\bin\Debug\RDA_DW.dacpac
+C:\Users\tokio\source\repos\RDA\RDA_DW\bin\Debug\RDA_DW.dll
+C:\Users\tokio\source\repos\RDA\RDA_DW\bin\Debug\RDA_DW.pdb
+C:\Users\tokio\source\repos\RDA\RDA_DW\bin\Debug\RDA.dll
+C:\Users\tokio\source\repos\RDA\RDA_DW\bin\Debug\RDA.pdb
+C:\Users\tokio\source\repos\RDA\RDA_DW\bin\Debug\RDA.dacpac
+C:\Users\tokio\source\repos\RDA\RDA_DW\obj\Debug\RDA_DW.sqlprojAssemblyReference.cache
+C:\Users\tokio\source\repos\RDA\RDA_DW\obj\Debug\Model.xml
+C:\Users\tokio\source\repos\RDA\RDA_DW\obj\Debug\refactor.xml
+C:\Users\tokio\source\repos\RDA\RDA_DW\obj\Debug\postdeploy.sql
+C:\Users\tokio\source\repos\RDA\RDA_DW\obj\Debug\predeploy.sql
+C:\Users\tokio\source\repos\RDA\RDA_DW\obj\Debug\RDA_DW.sqlproj.CopyComplete
+C:\Users\tokio\source\repos\RDA\RDA_DW\obj\Debug\RDA_DW.dll
+C:\Users\tokio\source\repos\RDA\RDA_DW\obj\Debug\RDA_DW.pdb

@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>RDA_DW</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{98b82ff9-a5a6-488c-821b-cc3d1310d619}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>RDA_DW</RootNamespace>
+    <AssemblyName>RDA_DW</AssemblyName>
+    <ModelCollation>1033, CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <IncludeSchemaNameInFileName>True</IncludeSchemaNameInFileName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Functions\" />
+    <Folder Include="dbo\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Functions\CreateKeyFromDate.sql" />
+    <Build Include="dbo\Functions\CreateKeyFromSourceID.sql" />
+    <Build Include="dbo\Functions\ufn_GetHashDimAgencija.sql" />
+    <Build Include="dbo\Functions\ufn_GetHashDimGrad.sql" />
+    <Build Include="dbo\Functions\ufn_GetHashDimKompanija.sql" />
+    <Build Include="dbo\Functions\ufn_GetHashDimOdbor.sql" />
+    <Build Include="dbo\Functions\ufn_GetHashDimPrivrednaGrana.sql" />
+    <Build Include="dbo\Functions\ufn_GetHashDimTVkanali.sql" />
+    <Build Include="dbo\Functions\ufn_GetHashDimZaposleni.sql" />
+    <Build Include="dbo\Functions\ufn_GetHashFactNarudzbine.sql" />
+    <Build Include="dbo\Functions\ufn_GetHashFactReklama.sql" />
+    <Build Include="dbo\Stored Procedures\usp_PopulationDimAgencija.sql" />
+    <Build Include="dbo\Stored Procedures\usp_PopulationDimGrad.sql" />
+    <Build Include="dbo\Stored Procedures\usp_PopulationDimKompanija.sql" />
+    <Build Include="dbo\Stored Procedures\usp_PopulationDimOdbor.sql" />
+    <Build Include="dbo\Stored Procedures\usp_PopulationDimPrivrednaGrana.sql" />
+    <Build Include="dbo\Stored Procedures\usp_PopulationDimTVKanali.sql" />
+    <Build Include="dbo\Stored Procedures\usp_PopulationDimZaposleni.sql" />
+    <Build Include="dbo\Stored Procedures\usp_PopulationFactNarudzbenice.sql" />
+    <Build Include="dbo\Stored Procedures\usp_PopulationFactReklama.sql" />
+    <Build Include="dbo\Tables\DimAgencija.sql" />
+    <Build Include="dbo\Tables\DimDatum.sql" />
+    <Build Include="dbo\Tables\DimGrad.sql" />
+    <Build Include="dbo\Tables\DimKompanija.sql" />
+    <Build Include="dbo\Tables\DimOdbor.sql" />
+    <Build Include="dbo\Tables\DimPrivrednaGrana.sql" />
+    <Build Include="dbo\Tables\DimTVkanali.sql" />
+    <Build Include="dbo\Tables\DimZaposleni.sql" />
+    <Build Include="dbo\Tables\FactNarudzbenice.sql" />
+    <Build Include="dbo\Tables\FactReklama.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RDA\RDA.sqlproj">
+      <Name>RDA</Name>
+      <Project>{23d04b01-c417-4616-afa9-b5e63fd0f58c}</Project>
+      <Private>True</Private>
+      <SuppressMissingDependenciesErrors>False</SuppressMissingDependenciesErrors>
+      <DatabaseSqlCmdVariable>RDA</DatabaseSqlCmdVariable>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <SqlCmdVariable Include="RDA">
+      <DefaultValue>RDA</DefaultValue>
+      <Value>$(SqlCmdVar__1)</Value>
+    </SqlCmdVariable>
+  </ItemGroup>
+</Project>

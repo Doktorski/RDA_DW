@@ -1,0 +1,9 @@
+﻿CREATE FUNCTION dbo.CreateKeyFromDate
+(
+	@Date DATE
+)
+RETURNS INT
+AS
+BEGIN
+	RETURN CAST( REPLACE( CAST( @Date AS VARCHAR(10) ), '-', '' ) AS INT );
+END

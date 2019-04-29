@@ -1,0 +1,25 @@
+﻿CREATE TABLE [dbo].[FactReklama] (
+    [ReklamaKey]           INT           NOT NULL,
+    [IzvorniReklama_ID]    INT           NOT NULL,
+    [TVkanaliKey]          INT           NULL,
+    [PrivrednaGranaKey]    INT           NOT NULL,
+    [AgencijaKey]          INT           NOT NULL,
+    [OdborKey]             INT           NOT NULL,
+    [GradKey]              INT           NOT NULL,
+    [VremePrikazivanjaKey] INT           NOT NULL,
+    [KompanijaKey]         INT           NOT NULL,
+    [BrojPrikaza]          INT           DEFAULT ((1)) NULL,
+    [TrajanjeReklame]      INT           NULL,
+    [CenaReklame]          INT           NULL,
+    [HashKey]              INT           NULL,
+    [Obrisan]              SMALLDATETIME NULL,
+    PRIMARY KEY NONCLUSTERED ([ReklamaKey] ASC),
+    CONSTRAINT [FK_Agencija_Reklama] FOREIGN KEY ([AgencijaKey]) REFERENCES [dbo].[DimAgencija] ([AgencijaKey]),
+    CONSTRAINT [FK_Datum_Reklama] FOREIGN KEY ([VremePrikazivanjaKey]) REFERENCES [dbo].[DimDatum] ([DateKey]),
+    CONSTRAINT [FK_Kompanije_Reklama] FOREIGN KEY ([KompanijaKey]) REFERENCES [dbo].[DimKompanija] ([KompanijaKey]),
+    CONSTRAINT [FK_Odbor_Reklama] FOREIGN KEY ([OdborKey]) REFERENCES [dbo].[DimOdbor] ([OdborKey]),
+    CONSTRAINT [FK_PrivrednaGrana_Reklama] FOREIGN KEY ([PrivrednaGranaKey]) REFERENCES [dbo].[DimPrivrednaGrana] ([PrivrednaGranaKey]),
+    CONSTRAINT [FK_Region_Reklama] FOREIGN KEY ([GradKey]) REFERENCES [dbo].[DimGrad] ([GradKey]),
+    CONSTRAINT [FK_TVkanali_Reklama] FOREIGN KEY ([TVkanaliKey]) REFERENCES [dbo].[DimTVkanali] ([TVkanaliKey])
+);
+
