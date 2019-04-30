@@ -96,7 +96,7 @@
     <Build Include="dbo\Tables\FactReklama.sql" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RDA\RDA.sqlproj">
+    <ProjectReference Include="..\..\RDA_DB\RDA\RDA.sqlproj">
       <Name>RDA</Name>
       <Project>{23d04b01-c417-4616-afa9-b5e63fd0f58c}</Project>
       <Private>True</Private>
