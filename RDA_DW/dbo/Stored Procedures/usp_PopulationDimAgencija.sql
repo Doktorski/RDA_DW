@@ -21,7 +21,7 @@ BEGIN
 					Telefon,
 					Email
 				) AS HashKey
-			FROM [$(RDA)].dbo.Agencija
+			FROM [$(RDA)].[dbo].[Agencija]
 		) AS SOURCE ON ( TARGET.HashKey = SOURCE.HashKey )
 		WHEN MATCHED THEN
 			UPDATE
@@ -53,7 +53,7 @@ BEGIN
 				,SOURCE.HashKey
 				,NULL
 			)
-		WHEN NOT MATCHED BY SOURCE THEN UPDATE SET Obrisan = 1;
+		WHEN NOT MATCHED BY SOURCE THEN UPDATE SET TARGET.Obrisan = 1;
 
 	IF @@ERROR <> 0
 		BEGIN
