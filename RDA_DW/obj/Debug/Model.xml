@@ -151,26 +151,6 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
-								<References Name="[dbo].[DimZaposleni].[ZaposleniKey]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[DimZaposleni]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="8" />
-		</Element>
-		<Element Type="SqlPrimaryKeyConstraint">
-			<Property Name="IsClustered" Value="False" />
-			<Relationship Name="ColumnSpecifications">
-				<Entry>
-					<Element Type="SqlIndexedColumnSpecification">
-						<Relationship Name="Column">
-							<Entry>
 								<References Name="[dbo].[DimTVkanali].[TVkanaliKey]" />
 							</Entry>
 						</Relationship>
@@ -182,7 +162,7 @@
 					<References Name="[dbo].[DimTVkanali]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="9" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="8" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Property Name="IsClustered" Value="False" />
@@ -202,7 +182,7 @@
 					<References Name="[dbo].[DimPrivrednaGrana]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="10" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="9" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Property Name="IsClustered" Value="False" />
@@ -222,7 +202,7 @@
 					<References Name="[dbo].[DimOdbor]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="11" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="10" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Property Name="IsClustered" Value="False" />
@@ -242,7 +222,7 @@
 					<References Name="[dbo].[DimKompanija]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="12" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="11" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Property Name="IsClustered" Value="False" />
@@ -260,6 +240,26 @@
 			<Relationship Name="DefiningTable">
 				<Entry>
 					<References Name="[dbo].[DimGrad]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="12" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Property Name="IsClustered" Value="False" />
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
+								<References Name="[dbo].[DimZaposleni].[ZaposleniKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[DimZaposleni]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="13" />
@@ -946,7 +946,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="13" />
+			<AttachedAnnotation Disambiguator="12" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[DimKompanija]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1067,7 +1067,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="12" />
+			<AttachedAnnotation Disambiguator="11" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[DimOdbor]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1188,7 +1188,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="11" />
+			<AttachedAnnotation Disambiguator="10" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[DimPrivrednaGrana]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1277,7 +1277,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="10" />
+			<AttachedAnnotation Disambiguator="9" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[DimTVkanali]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1461,7 +1461,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="9" />
+			<AttachedAnnotation Disambiguator="8" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[DimZaposleni]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1551,7 +1551,7 @@ END]]></Value>
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
-									<Property Name="Length" Value="20" />
+									<Property Name="Length" Value="30" />
 									<Relationship Name="Type">
 										<Entry>
 											<References ExternalSource="BuiltIns" Name="[char]" />
@@ -1614,7 +1614,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="8" />
+			<AttachedAnnotation Disambiguator="13" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[FactNarudzbenice]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -4507,14 +4507,14 @@ BEGIN
 		MERGE dbo.DimPrivrednaGrana AS TARGET
 		USING (
 			SELECT  
-				dbo.CreateKeyFromSourceID(pg.Priv_Grana_ID) AS PrivrednaGranaKey
-				,pg.Priv_Grana_ID AS IzvorniPrivrednaGranaID
-				,pg.Naziv AS NazivPrivredneGrane
-				,dbo.ufn_GetHashDimPrivrednaGrana(
-					pg.Priv_Grana_ID
-					,pg.Naziv
+				[dbo].[CreateKeyFromSourceID](pg.[Priv_Grana_ID]) AS PrivrednaGranaKey
+				,pg.[Priv_Grana_ID] AS IzvorniPrivrednaGranaID
+				,pg.[Naziv] AS NazivPrivredneGrane
+				,[dbo].[ufn_GetHashDimPrivrednaGrana](
+					pg.[Priv_Grana_ID]
+					,pg.[Naziv]
 				) AS HashKey
-			FROM [$(RDA)].dbo.Privredna_grana AS pg
+			FROM [$(RDA)].[dbo].[Privredna_grana] AS pg
 		) AS SOURCE ON ( TARGET.HashKey = SOURCE.HashKey )
 		WHEN MATCHED THEN
 			UPDATE
@@ -4621,7 +4621,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="1081" />
+				<Property Name="Length" Value="1103" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE dbo.usp_PopulationDimPrivrednaGrana&#xD;&#xA;AS" />
@@ -4636,28 +4636,28 @@ BEGIN
 		MERGE dbo.DimTVKanali AS TARGET
 		USING (
 			SELECT 
-				dbo.CreateKeyFromSourceID(K.Kanali_ID) AS TVkanaliKey
-				,K.Kanali_ID AS IzvorniKanali_ID
-				,K.Naziv AS NazivKanala
-				,TV.Naziv AS TVkuca
-				,TV.Sediste AS SedisteTVkuca
-				,TV.Adresa AS AdresaTVkuca
-				,TV.Email AS EmailTVkuca
-				,TV.Telefon AS TelefonTVkuca 
-				,SV.Opis_strukture_vlasnistva AS VrstaVlasnistva
-				,dbo.ufn_GetHashDimTVkanali(
-					K.Kanali_ID
-					,K.Naziv
-					,TV.Naziv
-					,TV.Sediste
-					,TV.Adresa
-					,TV.Email
-					,TV.Telefon
-					,SV.Opis_strukture_vlasnistva
+				[dbo].[CreateKeyFromSourceID](K.[Kanali_ID]) AS TVkanaliKey
+				,K.[Kanali_ID] AS IzvorniKanali_ID
+				,K.[Naziv] AS NazivKanala
+				,TV.[Naziv] AS TVkuca
+				,TV.[Sediste] AS SedisteTVkuca
+				,TV.[Adresa] AS AdresaTVkuca
+				,TV.[Email] AS EmailTVkuca
+				,TV.[Telefon] AS TelefonTVkuca 
+				,SV.[Opis_strukture_vlasnistva] AS VrstaVlasnistva
+				,[dbo].[ufn_GetHashDimTVkanali](
+					K.[Kanali_ID]
+					,K.[Naziv]
+					,TV.[Naziv]
+					,TV.[Sediste]
+					,TV.[Adresa]
+					,TV.[Email]
+					,TV.[Telefon]
+					,SV.[Opis_strukture_vlasnistva]
 				) AS HashKey
-			FROM [$(RDA)].dbo.Struktura_vlasnistva AS SV WITH (NOLOCK)
-				INNER JOIN [$(RDA)].dbo.TV_kuca AS TV WITH (NOLOCK) ON TV.Struktura_vlasnistva_ID=SV.Struktura_vlasnistva_ID
-				INNER JOIN[$(RDA)].dbo.Kanali AS K WITH (NOLOCK) ON K.TV_kuca_ID=TV.TV_kuca_ID
+			FROM [$(RDA)].[dbo].[Struktura_vlasnistva] AS SV WITH (NOLOCK)
+				INNER JOIN [$(RDA)].[dbo].[TV_kuca] AS TV WITH (NOLOCK) ON TV.Struktura_vlasnistva_ID=SV.Struktura_vlasnistva_ID
+				INNER JOIN[$(RDA)].[dbo].[Kanali] AS K WITH (NOLOCK) ON K.TV_kuca_ID=TV.TV_kuca_ID
 		) AS SOURCE ON ( TARGET.HashKey = SOURCE.HashKey  )
 		WHEN MATCHED THEN
 			UPDATE
@@ -4908,7 +4908,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="2062" />
+				<Property Name="Length" Value="2116" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE dbo.usp_PopulationDimTVKanali&#xD;&#xA;AS" />
@@ -5157,40 +5157,40 @@ BEGIN
 		MERGE dbo.FactNarudzbenice AS TARGET
 		USING(
 			SELECT
-				dbo.CreateKeyFromSourceID( CAST( N.Narudzbenica_ID AS VARCHAR ) + '-||-' + CAST( SN.Stavka_narudzenice_ID AS VARCHAR ) + 
-					'-||-' + CAST( O.Odbor_ID AS VARCHAR ) + '-||-' + CAST( G.Grad_ID AS VARCHAR ) + 
-					'-||-' + CAST( P.Prikazuje_ID AS VARCHAR ) + '-||-' + CAST( K.Kompanija_ID AS VARCHAR ) + 
-					'-||-' + CAST( Z.Zaposleni_ID AS VARCHAR )
+				dbo.CreateKeyFromSourceID( CAST( N.[Narudzbenica_ID] AS VARCHAR ) + '-||-' + CAST( SN.[Stavka_narudzenice_ID] AS VARCHAR ) + 
+					'-||-' + CAST( O.[Odbor_ID] AS VARCHAR ) + '-||-' + CAST( G.[Grad_ID] AS VARCHAR ) + 
+					'-||-' + CAST( P.[Prikazuje_ID] AS VARCHAR ) + '-||-' + CAST( K.[Kompanija_ID] AS VARCHAR ) + 
+					'-||-' + CAST( Z.[Zaposleni_ID] AS VARCHAR )
 				) AS NarudzbeniceKey
-				,SN.Stavka_Narudzenice_ID AS IzvorniStavkaNarudzbenice_ID
-				,dbo.CreateKeyFromSourceID(O.Odbor_ID) AS OdborKey
-				,dbo.CreateKeyFromSourceID(G.Grad_ID) AS GradKey
-				,dbo.CreateKeyFromDate(P.Termin_Prikaza_Od) AS VremePrikazivanjaKey
-				,dbo.CreateKeyFromSourceID(K.Kompanija_ID) AS KompanijaKey
-				,dbo.CreateKeyFromSourceID(Z.Zaposleni_ID) AS ZaposleniKey
-				,SN.Kolicina AS BrojNarudzbenica
-				,P.Termin_Prikaza_Od AS PocetakTermina
-				,P.Termin_Prikaza_Do AS ZavrsetakTermina
-				,dbo.ufn_GetHashFactNarudzbine(
-					SN.Stavka_Narudzenice_ID
-					,dbo.CreateKeyFromSourceID(Z.Zaposleni_ID)
-					,dbo.CreateKeyFromSourceID(O.Odbor_ID)
-					,dbo.CreateKeyFromSourceID(G.Grad_ID)
-					,dbo.CreateKeyFromSourceID(P.Prikazuje_ID)
-					,dbo.CreateKeyFromSourceID(K.Kompanija_ID)
-					,SN.Kolicina
-					,P.Termin_Prikaza_Od
-					,P.Termin_Prikaza_Do
+				,SN.[Stavka_Narudzenice_ID] AS IzvorniStavkaNarudzbenice_ID
+				,[dbo].[CreateKeyFromSourceID](O.[Odbor_ID]) AS OdborKey
+				,[dbo].[CreateKeyFromSourceID](G.[Grad_ID]) AS GradKey
+				,[dbo].[CreateKeyFromDate](P.[Termin_Prikaza_Od]) AS VremePrikazivanjaKey
+				,[dbo].[CreateKeyFromSourceID](K.[Kompanija_ID]) AS KompanijaKey
+				,[dbo].[CreateKeyFromSourceID](Z.[Zaposleni_ID]) AS ZaposleniKey
+				,SN.[Kolicina] AS BrojNarudzbenica
+				,P.[Termin_Prikaza_Od] AS PocetakTermina
+				,P.[Termin_Prikaza_Do] AS ZavrsetakTermina
+				,[dbo].[ufn_GetHashFactNarudzbine](
+					SN.[Stavka_Narudzenice_ID]
+					,[dbo].[CreateKeyFromSourceID](Z.[Zaposleni_ID])
+					,[dbo].[CreateKeyFromSourceID](O.[Odbor_ID])
+					,[dbo].[CreateKeyFromSourceID](G.[Grad_ID])
+					,[dbo].[CreateKeyFromSourceID](P.[Prikazuje_ID])
+					,[dbo].[CreateKeyFromSourceID](K.[Kompanija_ID])
+					,SN.[Kolicina]
+					,P.[Termin_Prikaza_Od]
+					,P.[Termin_Prikaza_Do]
 				) AS HashKey
-			FROM [$(RDA)].dbo.Stavka_narudzenice AS SN WITH (NOLOCK)
-				INNER JOIN [$(RDA)].dbo.Narudzbenica AS N WITH (NOLOCK) ON SN.Narudzbenica_ID=N.Narudzbenica_ID
-				INNER JOIN [$(RDA)].dbo.Kompanija AS K WITH (NOLOCK) ON N.Kompanija_ID=K.Kompanija_ID
-				INNER JOIN [$(RDA)].dbo.Zaposleni AS Z WITH (NOLOCK) ON N.Zaposleni_ID=Z.Zaposleni_ID
-				INNER JOIN [$(RDA)].dbo.Agencija AS A WITH (NOLOCK) ON Z.Agencija_ID=A.Agencija_ID
-				INNER JOIN [$(RDA)].dbo.Reklama AS R WITH (NOLOCK) ON R.Agencija_ID=A.Agencija_ID
-				INNER JOIN [$(RDA)].dbo.Odbor AS O WITH (NOLOCK) ON R.Odbor_ID=O.Odbor_ID
-				INNER JOIN [$(RDA)].dbo.Grad AS G WITH (NOLOCK) ON O.Grad_ID=G.Grad_ID
-				INNER JOIN [$(RDA)].dbo.Prikazuje AS P WITH (NOLOCK) ON P.Reklama_ID=R.Reklama_ID
+			FROM [$(RDA)].[dbo].[Stavka_narudzenice] AS SN WITH (NOLOCK)
+				INNER JOIN [$(RDA)].[dbo].[Narudzbenica] AS N WITH (NOLOCK) ON SN.[Narudzbenica_ID]=N.[Narudzbenica_ID]
+				INNER JOIN [$(RDA)].[dbo].[Kompanija] AS K WITH (NOLOCK) ON N.Kompanija_ID=K.Kompanija_ID
+				INNER JOIN [$(RDA)].[dbo].[Zaposleni] AS Z WITH (NOLOCK) ON N.Zaposleni_ID=Z.Zaposleni_ID
+				INNER JOIN [$(RDA)].[dbo].[Agencija] AS A WITH (NOLOCK) ON Z.Agencija_ID=A.Agencija_ID
+				INNER JOIN [$(RDA)].[dbo].[Reklama] AS R WITH (NOLOCK) ON R.Agencija_ID=A.Agencija_ID
+				INNER JOIN [$(RDA)].[dbo].[Odbor] AS O WITH (NOLOCK) ON R.Odbor_ID=O.Odbor_ID
+				INNER JOIN [$(RDA)].[dbo].[Grad] AS G WITH (NOLOCK) ON O.Grad_ID=G.Grad_ID
+				INNER JOIN [$(RDA)].[dbo].[Prikazuje] AS P WITH (NOLOCK) ON P.Reklama_ID=R.Reklama_ID
 		) AS SOURCE ON ( TARGET.HashKey = SOURCE.HashKey )
 		WHEN MATCHED THEN 
 			UPDATE
@@ -5542,7 +5542,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="3456" />
+				<Property Name="Length" Value="3590" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE dbo.usp_PopulationFactNarudzbenice&#xD;&#xA;AS" />

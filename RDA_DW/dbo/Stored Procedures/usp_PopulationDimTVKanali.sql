@@ -6,28 +6,28 @@ BEGIN
 		MERGE dbo.DimTVKanali AS TARGET
 		USING (
 			SELECT 
-				dbo.CreateKeyFromSourceID(K.Kanali_ID) AS TVkanaliKey
-				,K.Kanali_ID AS IzvorniKanali_ID
-				,K.Naziv AS NazivKanala
-				,TV.Naziv AS TVkuca
-				,TV.Sediste AS SedisteTVkuca
-				,TV.Adresa AS AdresaTVkuca
-				,TV.Email AS EmailTVkuca
-				,TV.Telefon AS TelefonTVkuca 
-				,SV.Opis_strukture_vlasnistva AS VrstaVlasnistva
-				,dbo.ufn_GetHashDimTVkanali(
-					K.Kanali_ID
-					,K.Naziv
-					,TV.Naziv
-					,TV.Sediste
-					,TV.Adresa
-					,TV.Email
-					,TV.Telefon
-					,SV.Opis_strukture_vlasnistva
+				[dbo].[CreateKeyFromSourceID](K.[Kanali_ID]) AS TVkanaliKey
+				,K.[Kanali_ID] AS IzvorniKanali_ID
+				,K.[Naziv] AS NazivKanala
+				,TV.[Naziv] AS TVkuca
+				,TV.[Sediste] AS SedisteTVkuca
+				,TV.[Adresa] AS AdresaTVkuca
+				,TV.[Email] AS EmailTVkuca
+				,TV.[Telefon] AS TelefonTVkuca 
+				,SV.[Opis_strukture_vlasnistva] AS VrstaVlasnistva
+				,[dbo].[ufn_GetHashDimTVkanali](
+					K.[Kanali_ID]
+					,K.[Naziv]
+					,TV.[Naziv]
+					,TV.[Sediste]
+					,TV.[Adresa]
+					,TV.[Email]
+					,TV.[Telefon]
+					,SV.[Opis_strukture_vlasnistva]
 				) AS HashKey
-			FROM [$(RDA)].dbo.Struktura_vlasnistva AS SV WITH (NOLOCK)
-				INNER JOIN [$(RDA)].dbo.TV_kuca AS TV WITH (NOLOCK) ON TV.Struktura_vlasnistva_ID=SV.Struktura_vlasnistva_ID
-				INNER JOIN[$(RDA)].dbo.Kanali AS K WITH (NOLOCK) ON K.TV_kuca_ID=TV.TV_kuca_ID
+			FROM [$(RDA)].[dbo].[Struktura_vlasnistva] AS SV WITH (NOLOCK)
+				INNER JOIN [$(RDA)].[dbo].[TV_kuca] AS TV WITH (NOLOCK) ON TV.Struktura_vlasnistva_ID=SV.Struktura_vlasnistva_ID
+				INNER JOIN[$(RDA)].[dbo].[Kanali] AS K WITH (NOLOCK) ON K.TV_kuca_ID=TV.TV_kuca_ID
 		) AS SOURCE ON ( TARGET.HashKey = SOURCE.HashKey  )
 		WHEN MATCHED THEN
 			UPDATE
