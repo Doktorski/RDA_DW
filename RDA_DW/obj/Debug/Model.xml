@@ -3862,7 +3862,7 @@ BEGIN
 				,SOURCE.HashKey
 				,NULL
 			)
-		WHEN NOT MATCHED BY SOURCE THEN UPDATE SET Obrisan = 1;
+		WHEN NOT MATCHED BY SOURCE THEN UPDATE SET TARGET.Obrisan = 1;
 
 	IF @@ERROR <> 0
 		BEGIN
@@ -3975,6 +3975,9 @@ END]]></Value>
 				<Entry>
 					<References Name="[dbo].[ufn_GetHashDimAgencija]" />
 				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimAgencija].[Obrisan]" />
+				</Entry>
 			</Relationship>
 			<Relationship Name="Schema">
 				<Entry>
@@ -3982,7 +3985,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="1566" />
+				<Property Name="Length" Value="1573" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE dbo.usp_PopulationDimAgencija&#xD;&#xA;AS" />
@@ -4030,7 +4033,7 @@ BEGIN
 			,SOURCE.HashKey
 			,NULL
 		)
-	WHEN NOT MATCHED BY SOURCE THEN UPDATE SET Obrisan = CAST( GETDATE() AS SMALLDATETIME );
+	WHEN NOT MATCHED BY SOURCE THEN UPDATE SET TARGET.Obrisan = CAST( GETDATE() AS SMALLDATETIME );
 
 	IF @@ERROR <> 0
 		BEGIN
@@ -4135,6 +4138,9 @@ END]]></Value>
 					<References Name="[dbo].[ufn_GetHashDimGrad]" />
 				</Entry>
 				<Entry>
+					<References Name="[dbo].[DimGrad].[Obrisan]" />
+				</Entry>
+				<Entry>
 					<References ExternalSource="BuiltIns" Name="[smalldatetime]" />
 				</Entry>
 			</Relationship>
@@ -4144,7 +4150,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="1126" />
+				<Property Name="Length" Value="1133" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE dbo.usp_PopulationDimGrad&#xD;&#xA;AS" />
@@ -4196,7 +4202,7 @@ BEGIN
 			,SOURCE.HashKey
 			,NULL
 		)
-	WHEN NOT MATCHED BY SOURCE THEN UPDATE SET Obrisan = CAST( GETDATE() AS SMALLDATETIME );
+	WHEN NOT MATCHED BY SOURCE THEN UPDATE SET TARGET.Obrisan = CAST( GETDATE() AS SMALLDATETIME );
 
 	IF @@ERROR <> 0
 		BEGIN
@@ -4286,6 +4292,9 @@ END]]></Value>
 					<References Name="[dbo].[ufn_GetHashDimKompanija]" />
 				</Entry>
 				<Entry>
+					<References Name="[dbo].[DimKompanija].[Obrisan]" />
+				</Entry>
+				<Entry>
 					<References ExternalSource="BuiltIns" Name="[smalldatetime]" />
 				</Entry>
 			</Relationship>
@@ -4295,7 +4304,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="1260" />
+				<Property Name="Length" Value="1267" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE dbo.usp_PopulationDimKompanija&#xD;&#xA;AS" />
@@ -4348,7 +4357,7 @@ BEGIN
 			,SOURCE.HashKey
 			,NULL
 		)
-		WHEN NOT MATCHED BY SOURCE THEN UPDATE SET Obrisan = CAST( GETDATE() AS SMALLDATETIME );
+		WHEN NOT MATCHED BY SOURCE THEN UPDATE SET TARGET.Obrisan = CAST( GETDATE() AS SMALLDATETIME );
 
 	IF @@ERROR <> 0
 		BEGIN
@@ -4471,6 +4480,9 @@ END]]></Value>
 					<References Name="[dbo].[ufn_GetHashDimOdbor]" />
 				</Entry>
 				<Entry>
+					<References Name="[dbo].[DimOdbor].[Obrisan]" />
+				</Entry>
+				<Entry>
 					<References ExternalSource="BuiltIns" Name="[smalldatetime]" />
 				</Entry>
 			</Relationship>
@@ -4480,7 +4492,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="1394" />
+				<Property Name="Length" Value="1401" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE dbo.usp_PopulationDimOdbor&#xD;&#xA;AS" />
@@ -4495,14 +4507,14 @@ BEGIN
 		MERGE dbo.DimPrivrednaGrana AS TARGET
 		USING (
 			SELECT  
-				dbo.CreateKeyFromSourceID(Priv_Grana_ID) AS PrivrednaGranaKey
-				,Priv_Grana_ID AS IzvorniPrivrednaGranaID
-				,Naziv AS NazivPrivredneGrane
+				dbo.CreateKeyFromSourceID(pg.Priv_Grana_ID) AS PrivrednaGranaKey
+				,pg.Priv_Grana_ID AS IzvorniPrivrednaGranaID
+				,pg.Naziv AS NazivPrivredneGrane
 				,dbo.ufn_GetHashDimPrivrednaGrana(
-					Priv_Grana_ID
-					,Naziv
+					pg.Priv_Grana_ID
+					,pg.Naziv
 				) AS HashKey
-			FROM [$(RDA)].dbo.Privredna_grana
+			FROM [$(RDA)].dbo.Privredna_grana AS pg
 		) AS SOURCE ON ( TARGET.HashKey = SOURCE.HashKey )
 		WHEN MATCHED THEN
 			UPDATE
@@ -4522,7 +4534,7 @@ BEGIN
 					,SOURCE.HashKey
 					,NULL
 				)
-		WHEN NOT MATCHED BY SOURCE THEN UPDATE SET Obrisan = 1;
+		WHEN NOT MATCHED BY SOURCE THEN UPDATE SET TARGET.Obrisan = 1;
 
 	IF @@ERROR <> 0
 		BEGIN
@@ -4544,6 +4556,12 @@ END]]></Value>
 				</Entry>
 				<Entry>
 					<References Name="[dbo].[CreateKeyFromSourceID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Privredna_grana].[Priv_grana_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Privredna_grana].[Naziv]" />
 				</Entry>
 				<Entry>
 					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Privredna_grana].[Naziv]" />
@@ -4585,7 +4603,16 @@ END]]></Value>
 					<References Name="[dbo].[CreateKeyFromSourceID]" />
 				</Entry>
 				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Privredna_grana].[Priv_grana_ID]" />
+				</Entry>
+				<Entry>
+					<References ExternalSource="RDA.dacpac" Name="[$(RDA)]|[dbo].[Privredna_grana].[Naziv]" />
+				</Entry>
+				<Entry>
 					<References Name="[dbo].[ufn_GetHashDimPrivrednaGrana]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimPrivrednaGrana].[Obrisan]" />
 				</Entry>
 			</Relationship>
 			<Relationship Name="Schema">
@@ -4594,7 +4621,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="1053" />
+				<Property Name="Length" Value="1081" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE dbo.usp_PopulationDimPrivrednaGrana&#xD;&#xA;AS" />
@@ -4668,7 +4695,7 @@ BEGIN
 				,SOURCE.HashKey
 				,NULL
 			)
-		WHEN NOT MATCHED BY SOURCE THEN UPDATE SET Obrisan = 1;
+		WHEN NOT MATCHED BY SOURCE THEN UPDATE SET TARGET.Obrisan = 1;
 
 	IF @@ERROR <> 0
 		BEGIN
@@ -4871,6 +4898,9 @@ END]]></Value>
 				<Entry>
 					<References Name="[dbo].[ufn_GetHashDimTVkanali]" />
 				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimTVkanali].[Obrisan]" />
+				</Entry>
 			</Relationship>
 			<Relationship Name="Schema">
 				<Entry>
@@ -4878,7 +4908,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="2055" />
+				<Property Name="Length" Value="2062" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE dbo.usp_PopulationDimTVKanali&#xD;&#xA;AS" />
@@ -4941,7 +4971,7 @@ BEGIN
 			,SOURCE.HashKey
 			,NULL
 		)
-	WHEN NOT MATCHED BY SOURCE THEN UPDATE SET Obrisan = CAST( GETDATE() AS SMALLDATETIME );
+	WHEN NOT MATCHED BY SOURCE THEN UPDATE SET TARGET.Obrisan = CAST( GETDATE() AS SMALLDATETIME );
 
 	IF @@ERROR <> 0
 		BEGIN
@@ -5100,6 +5130,9 @@ END]]></Value>
 					<References Name="[dbo].[ufn_GetHashDimZaposleni]" />
 				</Entry>
 				<Entry>
+					<References Name="[dbo].[DimZaposleni].[Obrisan]" />
+				</Entry>
+				<Entry>
 					<References ExternalSource="BuiltIns" Name="[smalldatetime]" />
 				</Entry>
 			</Relationship>
@@ -5109,7 +5142,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="1727" />
+				<Property Name="Length" Value="1734" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].usp_PopulationDimZaposleni&#xD;&#xA;AS" />
@@ -5197,7 +5230,7 @@ BEGIN
 				,SOURCE.HashKey
 				,NULL
 			)
-		WHEN NOT MATCHED BY SOURCE THEN UPDATE SET Obrisan = CAST( GETDATE() AS SMALLDATETIME );
+		WHEN NOT MATCHED BY SOURCE THEN UPDATE SET TARGET.Obrisan = CAST( GETDATE() AS SMALLDATETIME );
 
 	IF @@ERROR <> 0
 		BEGIN
@@ -5497,6 +5530,9 @@ END]]></Value>
 					<References Name="[dbo].[ufn_GetHashFactNarudzbine]" />
 				</Entry>
 				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[Obrisan]" />
+				</Entry>
+				<Entry>
 					<References ExternalSource="BuiltIns" Name="[smalldatetime]" />
 				</Entry>
 			</Relationship>
@@ -5506,7 +5542,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="3449" />
+				<Property Name="Length" Value="3456" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE dbo.usp_PopulationFactNarudzbenice&#xD;&#xA;AS" />
@@ -5623,7 +5659,7 @@ BEGIN
 			,SOURCE.HashKey
 			,NULL
 		)
-	WHEN NOT MATCHED BY SOURCE THEN UPDATE SET Obrisan = CAST( GETDATE() AS SMALLDATETIME );
+	WHEN NOT MATCHED BY SOURCE THEN UPDATE SET TARGET.Obrisan = CAST( GETDATE() AS SMALLDATETIME );
 
 
 	IF @@ERROR <> 0
@@ -6028,6 +6064,9 @@ END]]></Value>
 					<References Name="[dbo].[ufn_GetHashFactReklama]" />
 				</Entry>
 				<Entry>
+					<References Name="[dbo].[FactReklama].[Obrisan]" />
+				</Entry>
+				<Entry>
 					<References ExternalSource="BuiltIns" Name="[smalldatetime]" />
 				</Entry>
 			</Relationship>
@@ -6037,7 +6076,7 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<Annotation Type="SysCommentsObjectAnnotation">
-				<Property Name="Length" Value="4393" />
+				<Property Name="Length" Value="4400" />
 				<Property Name="StartLine" Value="1" />
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE dbo.usp_PopulationFactReklama&#xD;&#xA;AS" />
