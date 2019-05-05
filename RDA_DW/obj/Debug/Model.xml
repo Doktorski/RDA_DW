@@ -276,6 +276,115 @@
 				</Entry>
 			</Relationship>
 		</Element>
+		<Element Type="SqlView" Name="[dbo].[Agencija]">
+			<Property Name="QueryScript">
+				<Value><![CDATA[
+SELECT 
+	AgencijaKey AS [Agencija Key]
+	,NazivAgencije AS [Naziv Agencije]
+	,SredisteAgencije AS [Sediste Agencije]
+	,AdresaAgencije AS [Adresa Agencije]
+	,TelefonAgencije AS [Telefon Agencije]
+	,EmailAgencije AS [E-mail Agencije]
+FROM dbo.DimAgencija
+WHERE Obrisan IS NULL]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Agencija].[Agencija Key]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimAgencija].[AgencijaKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Agencija].[Naziv Agencije]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimAgencija].[NazivAgencije]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Agencija].[Sediste Agencije]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimAgencija].[SredisteAgencije]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Agencija].[Adresa Agencije]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimAgencija].[AdresaAgencije]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Agencija].[Telefon Agencije]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimAgencija].[TelefonAgencije]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Agencija].[E-mail Agencije]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimAgencija].[EmailAgencije]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[dbo].[DimAgencija]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimAgencija].[AgencijaKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimAgencija].[NazivAgencije]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimAgencija].[SredisteAgencije]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimAgencija].[AdresaAgencije]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimAgencija].[TelefonAgencije]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimAgencija].[EmailAgencije]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimAgencija].[Obrisan]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="312" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE VIEW dbo.Agencija&#xD;&#xA;AS" />
+				<Property Name="FooterContents" Value=";" />
+			</Annotation>
+		</Element>
 		<Element Type="SqlScalarFunction" Name="[dbo].[CreateKeyFromDate]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
 			<Relationship Name="BodyDependencies">
@@ -403,6 +512,267 @@ END]]></Value>
 					</Element>
 				</Entry>
 			</Relationship>
+		</Element>
+		<Element Type="SqlView" Name="[dbo].[Datum]">
+			<Property Name="QueryScript">
+				<Value><![CDATA[
+SELECT 
+	DateKey AS [Date Key]
+	,Datum AS [Datum Sa Vremenom]
+	,DatumRS AS [Datum Tip1]
+	,DatumRS2 AS [Datum Tip2]
+	,DanUMesecu AS [Dan U Mesecu]
+	,ImeDana_C AS [Ime Dana Cirilica]
+	,ImeDana_L AS [Ime Dana Latinica]
+	,DanUSedmici AS [Dan U Sedmici]
+	,NedeljaUGodini AS [Nedelja U Godini]
+	,Mesec AS [Mesec]
+	,ImeMeseca_C AS [Ime Meseca Cirilica]
+	,ImeMeseca_L AS [Ime Meseca Latinica]
+	,Kvartal AS [Kvartal]
+	,ImeKvartala_C AS [Ime Kvartala Cirilica]
+	,ImeKvartala_L AS [Ime Kvartala Latinica]
+	,Godina AS [Godina]
+	,MesecGodina AS [Mesec Godina]
+	,MMYYYY AS [Mesec Godina Skraceno]
+FROM dbo.DimDatum]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Datum].[Date Key]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimDatum].[DateKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Datum].[Datum Sa Vremenom]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimDatum].[Datum]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Datum].[Datum Tip1]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimDatum].[DatumRS]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Datum].[Datum Tip2]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimDatum].[DatumRS2]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Datum].[Dan U Mesecu]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimDatum].[DanUMesecu]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Datum].[Ime Dana Cirilica]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimDatum].[ImeDana_C]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Datum].[Ime Dana Latinica]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimDatum].[ImeDana_L]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Datum].[Dan U Sedmici]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimDatum].[DanUSedmici]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Datum].[Nedelja U Godini]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimDatum].[NedeljaUGodini]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Datum].[Mesec]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimDatum].[Mesec]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Datum].[Ime Meseca Cirilica]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimDatum].[ImeMeseca_C]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Datum].[Ime Meseca Latinica]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimDatum].[ImeMeseca_L]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Datum].[Kvartal]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimDatum].[Kvartal]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Datum].[Ime Kvartala Cirilica]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimDatum].[ImeKvartala_C]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Datum].[Ime Kvartala Latinica]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimDatum].[ImeKvartala_L]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Datum].[Godina]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimDatum].[Godina]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Datum].[Mesec Godina]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimDatum].[MesecGodina]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Datum].[Mesec Godina Skraceno]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimDatum].[MMYYYY]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[dbo].[DimDatum]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimDatum].[DateKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimDatum].[Datum]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimDatum].[DatumRS]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimDatum].[DatumRS2]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimDatum].[DanUMesecu]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimDatum].[ImeDana_C]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimDatum].[ImeDana_L]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimDatum].[DanUSedmici]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimDatum].[NedeljaUGodini]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimDatum].[Mesec]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimDatum].[ImeMeseca_C]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimDatum].[ImeMeseca_L]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimDatum].[Kvartal]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimDatum].[ImeKvartala_C]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimDatum].[ImeKvartala_L]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimDatum].[Godina]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimDatum].[MesecGodina]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimDatum].[MMYYYY]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="647" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE VIEW dbo.Datum&#xD;&#xA;AS" />
+				<Property Name="FooterContents" Value=";" />
+			</Annotation>
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[DimAgencija]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1544,6 +1914,7 @@ END]]></Value>
 				</Entry>
 				<Entry>
 					<Element Type="SqlSimpleColumn" Name="[dbo].[DimZaposleni].[JmbgZaposlenog]">
+						<Property Name="MaskingFunction" Value="default()" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
@@ -1560,6 +1931,7 @@ END]]></Value>
 				</Entry>
 				<Entry>
 					<Element Type="SqlSimpleColumn" Name="[dbo].[DimZaposleni].[EmailZaposlenog]">
+						<Property Name="MaskingFunction" Value="email()" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
@@ -2343,6 +2715,390 @@ END]]></Value>
 			</Relationship>
 			<AttachedAnnotation Disambiguator="21" />
 		</Element>
+		<Element Type="SqlView" Name="[dbo].[Grad]">
+			<Property Name="QueryScript">
+				<Value><![CDATA[
+SELECT 
+	GradKey AS [Grad Key]
+	,NazivGrada AS [Naziv Grada]
+	,NazivRegiona AS [Naziv Regiona]
+FROM dbo.DimGrad
+WHERE Obrisan IS NULL]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Grad].[Grad Key]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimGrad].[GradKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Grad].[Naziv Grada]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimGrad].[NazivGrada]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Grad].[Naziv Regiona]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimGrad].[NazivRegiona]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[dbo].[DimGrad]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimGrad].[GradKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimGrad].[NazivGrada]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimGrad].[NazivRegiona]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimGrad].[Obrisan]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="165" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE VIEW dbo.Grad&#xD;&#xA;AS" />
+				<Property Name="FooterContents" Value=";" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlView" Name="[dbo].[Kompanija]">
+			<Property Name="QueryScript">
+				<Value><![CDATA[
+SELECT 
+	KompanijaKey AS [Kompanija Key]
+	,NazivKompanije AS [Naziv Kompanija]
+	,SedisteKompanije AS [Sediste Kompanije]
+	,SifraKompanije AS [Sifra Kompanije]
+FROM dbo.DimKompanija
+WHERE Obrisan IS NULL]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Kompanija].[Kompanija Key]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimKompanija].[KompanijaKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Kompanija].[Naziv Kompanija]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimKompanija].[NazivKompanije]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Kompanija].[Sediste Kompanije]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimKompanija].[SedisteKompanije]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Kompanija].[Sifra Kompanije]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimKompanija].[SifraKompanije]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[dbo].[DimKompanija]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimKompanija].[KompanijaKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimKompanija].[NazivKompanije]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimKompanija].[SedisteKompanije]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimKompanija].[SifraKompanije]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimKompanija].[Obrisan]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="240" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE VIEW dbo.Kompanija&#xD;&#xA;AS" />
+				<Property Name="FooterContents" Value=";" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlView" Name="[dbo].[Narudzbenica]">
+			<Property Name="QueryScript">
+				<Value><![CDATA[
+SELECT 
+	NarudzbeniceKey AS [Narudzbenice Key]
+	,ZaposleniKey AS [Zaposleni Key]
+	,OdborKey AS [Odbor Key]
+	,GradKey AS [Grad Key]
+	,VremePrikazivanjaKey AS [Vreme Prikazivanja Key]
+	,KompanijaKey AS [Kompanija Key]
+	,BrojNarudzbenica AS [Broj Narudzbenica]
+	,PocetakTermina AS [Pocetak Termina]
+	,ZavrsetakTermina AS [Zavrsetak Termina]
+FROM dbo.FactNarudzbenice
+WHERE Obrisan IS NULL]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Narudzbenica].[Narudzbenice Key]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[FactNarudzbenice].[NarudzbeniceKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Narudzbenica].[Zaposleni Key]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[FactNarudzbenice].[ZaposleniKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Narudzbenica].[Odbor Key]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[FactNarudzbenice].[OdborKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Narudzbenica].[Grad Key]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[FactNarudzbenice].[GradKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Narudzbenica].[Vreme Prikazivanja Key]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[FactNarudzbenice].[VremePrikazivanjaKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Narudzbenica].[Kompanija Key]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[FactNarudzbenice].[KompanijaKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Narudzbenica].[Broj Narudzbenica]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[FactNarudzbenice].[BrojNarudzbenica]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Narudzbenica].[Pocetak Termina]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[FactNarudzbenice].[PocetakTermina]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Narudzbenica].[Zavrsetak Termina]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[FactNarudzbenice].[ZavrsetakTermina]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[NarudzbeniceKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[ZaposleniKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[OdborKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[GradKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[VremePrikazivanjaKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[KompanijaKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[BrojNarudzbenica]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[PocetakTermina]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[ZavrsetakTermina]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactNarudzbenice].[Obrisan]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="431" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE VIEW dbo.Narudzbenica&#xD;&#xA;AS" />
+				<Property Name="FooterContents" Value=";" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlView" Name="[dbo].[Odbor]">
+			<Property Name="QueryScript">
+				<Value><![CDATA[
+SELECT 
+	OdborKey AS [Odbor Key]
+	,NazivOdbora AS [Naziv Odbora]
+	,NazivPolitickeStranke AS [Naziv Politicke Stranke]
+	,NazivOpstine AS [Naziv Opstine]
+FROM dbo.DimOdbor
+WHERE Obrisan IS NULL]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Odbor].[Odbor Key]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimOdbor].[OdborKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Odbor].[Naziv Odbora]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimOdbor].[NazivOdbora]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Odbor].[Naziv Politicke Stranke]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimOdbor].[NazivPolitickeStranke]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Odbor].[Naziv Opstine]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimOdbor].[NazivOpstine]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[dbo].[DimOdbor]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimOdbor].[OdborKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimOdbor].[NazivOdbora]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimOdbor].[NazivPolitickeStranke]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimOdbor].[NazivOpstine]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimOdbor].[Obrisan]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="225" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE VIEW dbo.Odbor&#xD;&#xA;AS" />
+				<Property Name="FooterContents" Value=";" />
+			</Annotation>
+		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_DateKey]">
 			<Property Name="IsClustered" Value="False" />
 			<Relationship Name="ColumnSpecifications">
@@ -2362,6 +3118,372 @@ END]]></Value>
 				</Entry>
 			</Relationship>
 			<AttachedAnnotation Disambiguator="16" />
+		</Element>
+		<Element Type="SqlView" Name="[dbo].[PrivrednaGrana]">
+			<Property Name="QueryScript">
+				<Value><![CDATA[
+SELECT 
+	PrivrednaGranaKey AS [Privredna Grana Key]
+	,NazivPrivredneGrane AS [Naziv Privredne Grane]
+FROM dbo.DimPrivrednaGrana
+WHERE Obrisan IS NULL]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[PrivrednaGrana].[Privredna Grana Key]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimPrivrednaGrana].[PrivrednaGranaKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[PrivrednaGrana].[Naziv Privredne Grane]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimPrivrednaGrana].[NazivPrivredneGrane]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[dbo].[DimPrivrednaGrana]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimPrivrednaGrana].[PrivrednaGranaKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimPrivrednaGrana].[NazivPrivredneGrane]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimPrivrednaGrana].[Obrisan]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="190" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE VIEW dbo.PrivrednaGrana&#xD;&#xA;AS" />
+				<Property Name="FooterContents" Value=";" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlView" Name="[dbo].[Reklama]">
+			<Property Name="QueryScript">
+				<Value><![CDATA[
+SELECT 
+	ReklamaKey AS [Reklama Key]
+	,TVkanaliKey AS [TV Kanali Key]
+	,PrivrednaGranaKey AS [Privredna GranaKey]
+	,AgencijaKey AS [Agencija Key]
+	,OdborKey AS [Odbor Key]
+	,GradKey AS [Grad Key]
+	,VremePrikazivanjaKey AS [Vreme Prikazivanja Key]
+	,KompanijaKey AS [Kompanija Key]
+	,BrojPrikaza AS [Broj Prikaza]
+	,TrajanjeReklame AS [Trajanje Reklame]
+	,CenaReklame AS [Cena Reklame]
+FROM dbo.FactReklama
+WHERE Obrisan IS NULL]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Reklama].[Reklama Key]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[FactReklama].[ReklamaKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Reklama].[TV Kanali Key]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[FactReklama].[TVkanaliKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Reklama].[Privredna GranaKey]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[FactReklama].[PrivrednaGranaKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Reklama].[Agencija Key]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[FactReklama].[AgencijaKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Reklama].[Odbor Key]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[FactReklama].[OdborKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Reklama].[Grad Key]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[FactReklama].[GradKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Reklama].[Vreme Prikazivanja Key]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[FactReklama].[VremePrikazivanjaKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Reklama].[Kompanija Key]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[FactReklama].[KompanijaKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Reklama].[Broj Prikaza]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[FactReklama].[BrojPrikaza]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Reklama].[Trajanje Reklame]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[FactReklama].[TrajanjeReklame]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Reklama].[Cena Reklame]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[FactReklama].[CenaReklame]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[dbo].[FactReklama]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[ReklamaKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[TVkanaliKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[PrivrednaGranaKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[AgencijaKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[OdborKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[GradKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[VremePrikazivanjaKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[KompanijaKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[BrojPrikaza]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[TrajanjeReklame]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[CenaReklame]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[FactReklama].[Obrisan]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="470" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE VIEW dbo.Reklama&#xD;&#xA;AS" />
+				<Property Name="FooterContents" Value=";" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlView" Name="[dbo].[TvKanali]">
+			<Property Name="QueryScript">
+				<Value><![CDATA[
+SELECT 
+	TVkanaliKey AS [TV Kanali Key]
+	,NazivKanala AS [Naziv Kanala]
+	,TVkuca AS [TV Kuca]
+	,SedisteTVkuca AS [Sediste TV Kuce]
+	,AdresaTVkuca AS [ Adresa TV Kuce]
+	,EmailTVkuca AS [E-mail TV Kuce]
+	,TelefonTVkuca AS [Teleon TV Kuce]
+	,VrstaVlasnistva AS [Vrsta Vlasnistva]
+FROM dbo.DimTVkanali
+WHERE Obrisan IS NULL]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[TvKanali].[TV Kanali Key]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimTVkanali].[TVkanaliKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[TvKanali].[Naziv Kanala]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimTVkanali].[NazivKanala]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[TvKanali].[TV Kuca]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimTVkanali].[TVkuca]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[TvKanali].[Sediste TV Kuce]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimTVkanali].[SedisteTVkuca]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[TvKanali].[ Adresa TV Kuce]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimTVkanali].[AdresaTVkuca]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[TvKanali].[E-mail TV Kuce]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimTVkanali].[EmailTVkuca]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[TvKanali].[Teleon TV Kuce]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimTVkanali].[TelefonTVkuca]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[TvKanali].[Vrsta Vlasnistva]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimTVkanali].[VrstaVlasnistva]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[dbo].[DimTVkanali]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimTVkanali].[TVkanaliKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimTVkanali].[NazivKanala]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimTVkanali].[TVkuca]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimTVkanali].[SedisteTVkuca]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimTVkanali].[AdresaTVkuca]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimTVkanali].[EmailTVkuca]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimTVkanali].[TelefonTVkuca]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimTVkanali].[VrstaVlasnistva]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimTVkanali].[Obrisan]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="360" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE VIEW dbo.TvKanali&#xD;&#xA;AS" />
+				<Property Name="FooterContents" Value=";" />
+			</Annotation>
 		</Element>
 		<Element Type="SqlScalarFunction" Name="[dbo].[ufn_GetHashDimAgencija]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -6094,6 +7216,102 @@ END]]></Value>
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE dbo.usp_PopulationFactReklama&#xD;&#xA;AS" />
 			</Annotation>
 		</Element>
+		<Element Type="SqlView" Name="[dbo].[Zaposleni]">
+			<Property Name="QueryScript">
+				<Value><![CDATA[
+SELECT 
+	ZaposleniKey AS [Zaposleni Key]
+	,ImeZaposlenog AS [Ime Zaposlenog] 
+	,PrezimeZaposlenog AS [Prezime Zaposlenog]
+	,JmbgZaposlenog AS [JMBG Zaposlenog]
+	,PozicijaZaposlenog AS [Pozicija Zaposlenog]
+FROM dbo.DimZaposleni
+WHERE Obrisan IS NULL]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="Columns">
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Zaposleni].[Zaposleni Key]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimZaposleni].[ZaposleniKey]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Zaposleni].[Ime Zaposlenog]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimZaposleni].[ImeZaposlenog]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Zaposleni].[Prezime Zaposlenog]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimZaposleni].[PrezimeZaposlenog]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Zaposleni].[JMBG Zaposlenog]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimZaposleni].[JmbgZaposlenog]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlComputedColumn" Name="[dbo].[Zaposleni].[Pozicija Zaposlenog]">
+						<Relationship Name="ExpressionDependencies">
+							<Entry>
+								<References Name="[dbo].[DimZaposleni].[PozicijaZaposlenog]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="QueryDependencies">
+				<Entry>
+					<References Name="[dbo].[DimZaposleni]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimZaposleni].[ZaposleniKey]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimZaposleni].[ImeZaposlenog]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimZaposleni].[PrezimeZaposlenog]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimZaposleni].[JmbgZaposlenog]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimZaposleni].[PozicijaZaposlenog]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[DimZaposleni].[Obrisan]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="288" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE VIEW dbo.Zaposleni&#xD;&#xA;AS" />
+				<Property Name="FooterContents" Value=";" />
+			</Annotation>
+		</Element>
 		<Element Type="SqlUser" Name="[DELL\Aleksandar T]">
 			<Property Name="LoginIdentifierScript">
 				<Value><![CDATA[[DELL\Aleksandar T]]]></Value>
@@ -6120,6 +7338,24 @@ END]]></Value>
 			<Property Name="AuthenticationType" Value="3" />
 			<Relationship Name="Login">
 				<Entry />
+			</Relationship>
+		</Element>
+		<Element Type="SqlPermissionStatement" Name="[Grant.Select.Object].[DELL\SalesPerson].[dbo].[dbo].[DimZaposleni]">
+			<Property Name="Permission" Value="2" />
+			<Relationship Name="Grantee">
+				<Entry>
+					<References Name="[DELL\SalesPerson]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Grantor">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="SecuredObject">
+				<Entry>
+					<References Name="[dbo].[DimZaposleni]" />
+				</Entry>
 			</Relationship>
 		</Element>
 	</Model>

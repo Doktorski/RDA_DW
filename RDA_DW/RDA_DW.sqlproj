@@ -63,6 +63,7 @@
     <Folder Include="dbo\Functions\" />
     <Folder Include="dbo\Stored Procedures\" />
     <Folder Include="Security\" />
+    <Folder Include="dbo\Views\" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Functions\CreateKeyFromDate.sql" />
@@ -98,6 +99,16 @@
     <Build Include="Security\DELL_Aleksandar T.sql" />
     <Build Include="Security\DELL_SalesPerson.sql" />
     <Build Include="Security\RoleMemberships.sql" />
+    <Build Include="dbo\Views\dbo.Agencija.sql" />
+    <Build Include="dbo\Views\dbo.Datum.sql" />
+    <Build Include="dbo\Views\dbo.Grad.sql" />
+    <Build Include="dbo\Views\dbo.Kompanija.sql" />
+    <Build Include="dbo\Views\dbo.Narudzbenica.sql" />
+    <Build Include="dbo\Views\dbo.Odbor.sql" />
+    <Build Include="dbo\Views\dbo.PrivrednaGrana.sql" />
+    <Build Include="dbo\Views\dbo.Reklama.sql" />
+    <Build Include="dbo\Views\dbo.TvKanali.sql" />
+    <Build Include="dbo\Views\dbo.Zaposleni.sql" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\RDA_DB\RDA\RDA.sqlproj">
