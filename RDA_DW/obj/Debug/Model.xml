@@ -66,7 +66,7 @@
 					<References Name="[dbo].[FactReklama].[BrojPrikaza]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
 		</Element>
 		<Element Type="SqlDefaultConstraint">
 			<Property Name="DefaultExpressionScript">
@@ -82,7 +82,7 @@
 					<References Name="[dbo].[FactNarudzbenice].[BrojNarudzbenica]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="5" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Property Name="IsClustered" Value="False" />
@@ -102,7 +102,7 @@
 					<References Name="[dbo].[DimAgencija]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="5" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Property Name="IsClustered" Value="False" />
@@ -122,7 +122,7 @@
 					<References Name="[dbo].[FactReklama]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="6" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="7" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Property Name="IsClustered" Value="False" />
@@ -142,7 +142,7 @@
 					<References Name="[dbo].[FactNarudzbenice]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="7" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="8" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Property Name="IsClustered" Value="False" />
@@ -162,7 +162,7 @@
 					<References Name="[dbo].[DimTVkanali]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="8" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="9" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Property Name="IsClustered" Value="False" />
@@ -182,7 +182,7 @@
 					<References Name="[dbo].[DimPrivrednaGrana]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="9" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="10" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Property Name="IsClustered" Value="False" />
@@ -202,7 +202,7 @@
 					<References Name="[dbo].[DimOdbor]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="10" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="11" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Property Name="IsClustered" Value="False" />
@@ -222,7 +222,7 @@
 					<References Name="[dbo].[DimKompanija]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="11" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="12" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Property Name="IsClustered" Value="False" />
@@ -242,7 +242,7 @@
 					<References Name="[dbo].[DimGrad]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="12" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="13" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Property Name="IsClustered" Value="False" />
@@ -262,7 +262,7 @@
 					<References Name="[dbo].[DimZaposleni]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="13" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="14" />
 		</Element>
 		<Element Type="SqlScalarFunction" Name="[dbo].[CreateKeyFromDate]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -543,7 +543,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="5" />
+			<AttachedAnnotation Disambiguator="6" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[DimDatum]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -841,7 +841,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="14" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="15" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[DimGrad]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -946,7 +946,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="12" />
+			<AttachedAnnotation Disambiguator="13" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[DimKompanija]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1067,7 +1067,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="11" />
+			<AttachedAnnotation Disambiguator="12" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[DimOdbor]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1188,7 +1188,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="10" />
+			<AttachedAnnotation Disambiguator="11" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[DimPrivrednaGrana]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1277,7 +1277,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="9" />
+			<AttachedAnnotation Disambiguator="10" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[DimTVkanali]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1461,7 +1461,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="8" />
+			<AttachedAnnotation Disambiguator="9" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[DimZaposleni]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1614,7 +1614,7 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="13" />
+			<AttachedAnnotation Disambiguator="14" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[FactNarudzbenice]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1742,7 +1742,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="4" />
+						<AttachedAnnotation Disambiguator="5" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -1811,12 +1811,12 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="7" />
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="15" />
+			<AttachedAnnotation Disambiguator="8" />
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="16" />
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="17" />
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="18" />
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="19" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="20" />
 		</Element>
 		<Element Type="SqlTable" Name="[dbo].[FactReklama]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -1977,7 +1977,7 @@ END]]></Value>
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="3" />
+						<AttachedAnnotation Disambiguator="4" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -2046,14 +2046,14 @@ END]]></Value>
 					<References ExternalSource="BuiltIns" Name="[dbo]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="6" />
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="20" />
+			<AttachedAnnotation Disambiguator="7" />
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="21" />
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="22" />
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="23" />
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="24" />
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="25" />
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="26" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="27" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_Agencija_Reklama]">
 			<Relationship Name="Columns">
@@ -2076,7 +2076,7 @@ END]]></Value>
 					<References Name="[dbo].[DimAgencija]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="20" />
+			<AttachedAnnotation Disambiguator="21" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_Datum_Narudzbine]">
 			<Relationship Name="Columns">
@@ -2099,7 +2099,7 @@ END]]></Value>
 					<References Name="[dbo].[DimDatum]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="15" />
+			<AttachedAnnotation Disambiguator="16" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_Datum_Reklama]">
 			<Relationship Name="Columns">
@@ -2122,7 +2122,7 @@ END]]></Value>
 					<References Name="[dbo].[DimDatum]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="21" />
+			<AttachedAnnotation Disambiguator="22" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_Kompanije_Narudzbine]">
 			<Relationship Name="Columns">
@@ -2145,7 +2145,7 @@ END]]></Value>
 					<References Name="[dbo].[DimKompanija]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="16" />
+			<AttachedAnnotation Disambiguator="17" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_Kompanije_Reklama]">
 			<Relationship Name="Columns">
@@ -2168,7 +2168,7 @@ END]]></Value>
 					<References Name="[dbo].[DimKompanija]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="22" />
+			<AttachedAnnotation Disambiguator="23" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_Odbor_Narudzbine]">
 			<Relationship Name="Columns">
@@ -2191,7 +2191,7 @@ END]]></Value>
 					<References Name="[dbo].[DimOdbor]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="17" />
+			<AttachedAnnotation Disambiguator="18" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_Odbor_Reklama]">
 			<Relationship Name="Columns">
@@ -2214,7 +2214,7 @@ END]]></Value>
 					<References Name="[dbo].[DimOdbor]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="23" />
+			<AttachedAnnotation Disambiguator="24" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_PrivrednaGrana_Reklama]">
 			<Relationship Name="Columns">
@@ -2237,7 +2237,7 @@ END]]></Value>
 					<References Name="[dbo].[DimPrivrednaGrana]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="24" />
+			<AttachedAnnotation Disambiguator="25" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_Region_Narudzbine]">
 			<Relationship Name="Columns">
@@ -2260,7 +2260,7 @@ END]]></Value>
 					<References Name="[dbo].[DimGrad]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="18" />
+			<AttachedAnnotation Disambiguator="19" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_Region_Reklama]">
 			<Relationship Name="Columns">
@@ -2283,7 +2283,7 @@ END]]></Value>
 					<References Name="[dbo].[DimGrad]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="25" />
+			<AttachedAnnotation Disambiguator="26" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_TVkanali_Reklama]">
 			<Relationship Name="Columns">
@@ -2306,7 +2306,7 @@ END]]></Value>
 					<References Name="[dbo].[DimTVkanali]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="26" />
+			<AttachedAnnotation Disambiguator="27" />
 		</Element>
 		<Element Type="SqlForeignKeyConstraint" Name="[dbo].[FK_Zaposleni_Narudzbine]">
 			<Relationship Name="Columns">
@@ -2329,7 +2329,7 @@ END]]></Value>
 					<References Name="[dbo].[DimZaposleni]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="19" />
+			<AttachedAnnotation Disambiguator="20" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint" Name="[dbo].[PK_DateKey]">
 			<Property Name="IsClustered" Value="False" />
@@ -2349,7 +2349,7 @@ END]]></Value>
 					<References Name="[dbo].[DimDatum]" />
 				</Entry>
 			</Relationship>
-			<AttachedAnnotation Disambiguator="14" />
+			<AttachedAnnotation Disambiguator="15" />
 		</Element>
 		<Element Type="SqlScalarFunction" Name="[dbo].[ufn_GetHashDimAgencija]">
 			<Property Name="IsAnsiNullsOn" Value="True" />
@@ -6081,6 +6081,25 @@ END]]></Value>
 				<Property Name="StartColumn" Value="1" />
 				<Property Name="HeaderContents" Value="CREATE PROCEDURE dbo.usp_PopulationFactReklama&#xD;&#xA;AS" />
 			</Annotation>
+		</Element>
+		<Element Type="SqlUser" Name="[DELL\Aleksandar T]">
+			<Property Name="LoginIdentifierScript">
+				<Value><![CDATA[[DELL\Aleksandar T]]]></Value>
+			</Property>
+			<Property Name="AuthenticationType" Value="3" />
+			<Relationship Name="DefaultSchema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[db_owner]" />
+					<Annotation Type="PersistedResolvableAnnotation" Name="[db_owner]">
+						<Property Name="TargetTypeStorage" Value="SqlSchema" />
+						<Property Name="Length" Value="10" />
+						<Property Name="Offset" Value="89" />
+					</Annotation>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Login">
+				<Entry />
+			</Relationship>
 		</Element>
 	</Model>
 </DataSchemaModel>
