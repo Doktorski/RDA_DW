@@ -96,6 +96,8 @@
     <Build Include="dbo\Tables\FactNarudzbenice.sql" />
     <Build Include="dbo\Tables\FactReklama.sql" />
     <Build Include="Security\DELL_Aleksandar T.sql" />
+    <Build Include="Security\DELL_SalesPerson.sql" />
+    <Build Include="Security\RoleMemberships.sql" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\RDA_DB\RDA\RDA.sqlproj">
